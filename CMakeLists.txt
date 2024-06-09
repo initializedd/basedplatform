@@ -17,6 +17,10 @@ set_target_properties(
     VERSION 1.0.0
 )
 
+target_sources(basedplatform INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/macros.hpp
+)
+
 target_include_directories(basedplatform INTERFACE basedplatform)
 target_compile_features(basedplatform INTERFACE cxx_std_23)
 
