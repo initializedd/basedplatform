@@ -19,6 +19,7 @@ set_target_properties(
 
 target_sources(basedplatform INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/macros.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_id.hpp
 )
 
 target_include_directories(basedplatform INTERFACE basedplatform)
