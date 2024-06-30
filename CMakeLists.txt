@@ -40,6 +40,7 @@ target_sources(basedplatform INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_svm_revision_info.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_svm_address_space_identifiers.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_svm_features.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_encrypted_memory_asid_info.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_centaur_features.hpp
 )
 
