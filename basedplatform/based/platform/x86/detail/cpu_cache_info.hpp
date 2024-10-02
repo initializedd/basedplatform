@@ -44,36 +44,36 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_cache_info : std::uint8_t
 
     enum class cpu_cache_info_mask : std::uint32_t {
-        cache_type                                            = 1u << cpu_cache_info::cache_type_bit_0
-                                                              | 1u << cpu_cache_info::cache_type_bit_1
-                                                              | 1u << cpu_cache_info::cache_type_bit_2
-                                                              | 1u << cpu_cache_info::cache_type_bit_3
-                                                              | 1u << cpu_cache_info::cache_type_bit_4,
-        cache_level                                           = 1u << cpu_cache_info::cache_level_bit_0
-                                                              | 1u << cpu_cache_info::cache_level_bit_1
-                                                              | 1u << cpu_cache_info::cache_level_bit_2,
-        self_init_cache_level                                 = 1u << cpu_cache_info::self_init_cache_level,
-        fully_associative_cache                               = 1u << cpu_cache_info::fully_associative_cache,
-        wbinvd_cache_invalidation_execution_scope             = 1u << cpu_cache_info::wbinvd_cache_invalidation_execution_scope,
-        cache_inclusiveness                                   = 1u << cpu_cache_info::cache_inclusiveness,
-        max_num_of_addressable_ids_logical_shared_cache       = 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_0
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_1
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_2
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_3
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_4
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_5
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_6
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_7
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_8
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_9
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_10
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_11,
-        max_num_of_addressable_ids_cores_phys_package         = 1u << cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_0
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_1
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_2
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_3
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_4
-                                                              | 1u << cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_5
+        cache_type                                      = 1u << std::to_underlying(cpu_cache_info::cache_type_bit_0)
+                                                        | 1u << std::to_underlying(cpu_cache_info::cache_type_bit_1)
+                                                        | 1u << std::to_underlying(cpu_cache_info::cache_type_bit_2)
+                                                        | 1u << std::to_underlying(cpu_cache_info::cache_type_bit_3)
+                                                        | 1u << std::to_underlying(cpu_cache_info::cache_type_bit_4),
+        cache_level                                     = 1u << std::to_underlying(cpu_cache_info::cache_level_bit_0)
+                                                        | 1u << std::to_underlying(cpu_cache_info::cache_level_bit_1)
+                                                        | 1u << std::to_underlying(cpu_cache_info::cache_level_bit_2),
+        self_init_cache_level                           = 1u << std::to_underlying(cpu_cache_info::self_init_cache_level),
+        fully_associative_cache                         = 1u << std::to_underlying(cpu_cache_info::fully_associative_cache),
+        wbinvd_cache_invalidation_execution_scope       = 1u << std::to_underlying(cpu_cache_info::wbinvd_cache_invalidation_execution_scope),
+        cache_inclusiveness                             = 1u << std::to_underlying(cpu_cache_info::cache_inclusiveness),
+        max_num_of_addressable_ids_logical_shared_cache = 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_0)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_1)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_2)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_3)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_4)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_5)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_6)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_7)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_8)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_9)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_10)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_logical_shared_cache_bit_11),
+        max_num_of_addressable_ids_cores_phys_package   = 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_0)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_1)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_2)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_3)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_4)
+                                                        | 1u << std::to_underlying(cpu_cache_info::max_num_of_addressable_ids_cores_phys_package_bit_5)
     }; // enum class cpu_cache_info_mask : std::uint32_t
 
     [[nodiscard]]
