@@ -45,38 +45,38 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_cache_meta : std::uint8_t
 
     enum class cpu_cache_meta_mask : std::uint32_t {
-        system_coherency_bytes      = 1u << cpu_cache_meta::system_coherency_bytes_bit_0
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_1
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_2
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_3
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_4
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_5
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_6
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_7
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_8
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_9
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_10
-                                    | 1u << cpu_cache_meta::system_coherency_bytes_bit_11,
-        phys_line_partition         = 1u << cpu_cache_meta::phys_line_partitions_bit_0
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_1
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_2
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_3
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_4
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_5
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_6
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_7
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_8
-                                    | 1u << cpu_cache_meta::phys_line_partitions_bit_9,
-        ways_of_cache_associativity = 1u << cpu_cache_meta::ways_of_cache_associativity_bit_0
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_1
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_2
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_3
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_4
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_5
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_6
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_7
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_8
-                                    | 1u << cpu_cache_meta::ways_of_cache_associativity_bit_9
+        system_coherency_bytes      = 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_0)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_1)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_2)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_3)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_4)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_5)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_6)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_7)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_8)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_9)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_10)
+                                    | 1u << std::to_underlying(cpu_cache_meta::system_coherency_bytes_bit_11),
+        phys_line_partition         = 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_0)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_1)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_2)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_3)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_4)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_5)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_6)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_7)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_8)
+                                    | 1u << std::to_underlying(cpu_cache_meta::phys_line_partitions_bit_9),
+        ways_of_cache_associativity = 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_0)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_1)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_2)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_3)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_4)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_5)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_6)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_7)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_8)
+                                    | 1u << std::to_underlying(cpu_cache_meta::ways_of_cache_associativity_bit_9)
     }; // enum class cpu_cache_meta_mask : std::uint32_t
 
     [[nodiscard]]
