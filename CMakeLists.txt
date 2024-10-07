@@ -58,6 +58,7 @@ target_sources(basedplatform INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_sgx_functions.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_sgx_miscselect_info.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_sgx_enclave_info.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_secs_attributes.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/processor_trace_features.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/processor_trace_extended_features.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_core_crystal_clock_frequency_info.hpp
