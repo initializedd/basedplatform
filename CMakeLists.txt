@@ -48,6 +48,7 @@ target_sources(basedplatform INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_extended_core_instructions.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_extended_compat_features.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_extended_advanced_instructions.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_extended_control_features.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_extended_core_info.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_extended_advanced_info.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/basedplatform/based/platform/x86/detail/cpu_state_components.hpp
