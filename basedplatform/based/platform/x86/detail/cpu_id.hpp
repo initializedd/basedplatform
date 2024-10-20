@@ -32,22 +32,22 @@ namespace based::platform::x86::detail {
         }
 
         [[nodiscard]]
-        constexpr inline bool eax_bit(const std::uint8_t bit) const noexcept {
+        constexpr bool eax_bit(const std::uint8_t bit) const noexcept {
             return (eax & (1u << bit)) != 0;
         }
 
         [[nodiscard]]
-        constexpr inline bool ebx_bit(const std::uint8_t bit) const noexcept {
+        constexpr bool ebx_bit(const std::uint8_t bit) const noexcept {
             return (ebx & (1u << bit)) != 0;
         }
 
         [[nodiscard]]
-        constexpr inline bool ecx_bit(const std::uint8_t bit) const noexcept {
+        constexpr bool ecx_bit(const std::uint8_t bit) const noexcept {
             return (ecx & (1u << bit)) != 0;
         }
 
         [[nodiscard]]
-        constexpr inline bool edx_bit(const std::uint8_t bit) const noexcept {
+        constexpr bool edx_bit(const std::uint8_t bit) const noexcept {
             return (edx & (1u << bit)) != 0;
         }
     }; // struct cpu_id
