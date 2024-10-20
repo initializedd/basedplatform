@@ -15,7 +15,7 @@ namespace based::platform::x86::detail {
         hwa,
         scalable_mca
         // bits 31:4 reserved
-    }; // enum class cpu_ras_feature
+    }; // enum class cpu_ras_feature : std::uint8_t
 
     enum class cpu_ras_feature_mask : std::uint32_t {
         mca_overflow_recov = 1u << std::to_underlying(cpu_ras_feature::mca_overflow_recov),
