@@ -4,3 +4,5 @@ bin/
 .vs/
 .cache/
 CMakeSettings.json
+compile_commands.json
+
