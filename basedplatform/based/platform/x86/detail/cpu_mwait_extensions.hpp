@@ -29,12 +29,12 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x05) {
             using enum cpu_mwait_extension;
-            const auto leaf5 = cpu_id(0x05, 0x00);
+            const auto leaf_0x05 = cpu_id(0x05, 0x00);
 
             // ecx register
-            if (leaf5.ecx_bit(0u)) result |= emx;
-            if (leaf5.ecx_bit(1u)) result |= ibe;
-            if (leaf5.ecx_bit(3u)) result |= monitorless_mwait;
+            if (leaf_0x05.ecx_bit(0u)) result |= emx;
+            if (leaf_0x05.ecx_bit(1u)) result |= ibe;
+            if (leaf_0x05.ecx_bit(3u)) result |= monitorless_mwait;
         }
 
         return result;

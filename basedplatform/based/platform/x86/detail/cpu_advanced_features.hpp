@@ -84,40 +84,40 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x01) {
             using enum cpu_advanced_feature;
-            const auto leaf1 = cpu_id(0x01, 0x00);
+            const auto leaf_0x01 = cpu_id(0x01, 0x00);
 
             // ecx register
-            if (leaf1.ecx_bit( 0u)) result |= sse3;
-            if (leaf1.ecx_bit( 1u)) result |= pclmulqdq;
-            if (leaf1.ecx_bit( 2u)) result |= dtes64;
-            if (leaf1.ecx_bit( 3u)) result |= monitor;
-            if (leaf1.ecx_bit( 4u)) result |= ds_cpl;
-            if (leaf1.ecx_bit( 5u)) result |= vmx;
-            if (leaf1.ecx_bit( 6u)) result |= smx;
-            if (leaf1.ecx_bit( 7u)) result |= est;
-            if (leaf1.ecx_bit( 8u)) result |= tm2;
-            if (leaf1.ecx_bit( 9u)) result |= ssse3;
-            if (leaf1.ecx_bit(10u)) result |= cnxt_id;
-            if (leaf1.ecx_bit(11u)) result |= sdbg;
-            if (leaf1.ecx_bit(12u)) result |= fma;
-            if (leaf1.ecx_bit(13u)) result |= cx16;
-            if (leaf1.ecx_bit(14u)) result |= xtpr;
-            if (leaf1.ecx_bit(15u)) result |= pdcm;
-            if (leaf1.ecx_bit(17u)) result |= pcid;
-            if (leaf1.ecx_bit(18u)) result |= dca;
-            if (leaf1.ecx_bit(19u)) result |= sse4_1;
-            if (leaf1.ecx_bit(20u)) result |= sse4_2;
-            if (leaf1.ecx_bit(21u)) result |= x2apic;
-            if (leaf1.ecx_bit(22u)) result |= movbe;
-            if (leaf1.ecx_bit(23u)) result |= popcnt;
-            if (leaf1.ecx_bit(24u)) result |= tsc_deadline;
-            if (leaf1.ecx_bit(25u)) result |= aes_ni;
-            if (leaf1.ecx_bit(26u)) result |= xsave;
-            if (leaf1.ecx_bit(27u)) result |= osxsave;
-            if (leaf1.ecx_bit(28u)) result |= avx;
-            if (leaf1.ecx_bit(29u)) result |= f16c;
-            if (leaf1.ecx_bit(30u)) result |= rdrnd;
-            if (leaf1.ecx_bit(31u)) result |= hypervisor;
+            if (leaf_0x01.ecx_bit( 0u)) result |= sse3;
+            if (leaf_0x01.ecx_bit( 1u)) result |= pclmulqdq;
+            if (leaf_0x01.ecx_bit( 2u)) result |= dtes64;
+            if (leaf_0x01.ecx_bit( 3u)) result |= monitor;
+            if (leaf_0x01.ecx_bit( 4u)) result |= ds_cpl;
+            if (leaf_0x01.ecx_bit( 5u)) result |= vmx;
+            if (leaf_0x01.ecx_bit( 6u)) result |= smx;
+            if (leaf_0x01.ecx_bit( 7u)) result |= est;
+            if (leaf_0x01.ecx_bit( 8u)) result |= tm2;
+            if (leaf_0x01.ecx_bit( 9u)) result |= ssse3;
+            if (leaf_0x01.ecx_bit(10u)) result |= cnxt_id;
+            if (leaf_0x01.ecx_bit(11u)) result |= sdbg;
+            if (leaf_0x01.ecx_bit(12u)) result |= fma;
+            if (leaf_0x01.ecx_bit(13u)) result |= cx16;
+            if (leaf_0x01.ecx_bit(14u)) result |= xtpr;
+            if (leaf_0x01.ecx_bit(15u)) result |= pdcm;
+            if (leaf_0x01.ecx_bit(17u)) result |= pcid;
+            if (leaf_0x01.ecx_bit(18u)) result |= dca;
+            if (leaf_0x01.ecx_bit(19u)) result |= sse4_1;
+            if (leaf_0x01.ecx_bit(20u)) result |= sse4_2;
+            if (leaf_0x01.ecx_bit(21u)) result |= x2apic;
+            if (leaf_0x01.ecx_bit(22u)) result |= movbe;
+            if (leaf_0x01.ecx_bit(23u)) result |= popcnt;
+            if (leaf_0x01.ecx_bit(24u)) result |= tsc_deadline;
+            if (leaf_0x01.ecx_bit(25u)) result |= aes_ni;
+            if (leaf_0x01.ecx_bit(26u)) result |= xsave;
+            if (leaf_0x01.ecx_bit(27u)) result |= osxsave;
+            if (leaf_0x01.ecx_bit(28u)) result |= avx;
+            if (leaf_0x01.ecx_bit(29u)) result |= f16c;
+            if (leaf_0x01.ecx_bit(30u)) result |= rdrnd;
+            if (leaf_0x01.ecx_bit(31u)) result |= hypervisor;
         }
 
         return result;

@@ -69,31 +69,31 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x06) {
             using enum cpu_thermal_capability;
-            const auto leaf6 = cpu_id(0x06, 0x00);
+            const auto leaf_0x06 = cpu_id(0x06, 0x00);
 
             // eax register
-            if (leaf6.eax_bit( 0u)) result |= dts;
-            if (leaf6.eax_bit( 1u)) result |= itbt;
-            if (leaf6.eax_bit( 2u)) result |= arat;
-            if (leaf6.eax_bit( 4u)) result |= pln;
-            if (leaf6.eax_bit( 5u)) result |= ecmd;
-            if (leaf6.eax_bit( 6u)) result |= ptm;
-            if (leaf6.eax_bit( 7u)) result |= hwp;
-            if (leaf6.eax_bit( 8u)) result |= hwp_notification;
-            if (leaf6.eax_bit( 9u)) result |= hwp_activhot baby songity_window;
-            if (leaf6.eax_bit(10u)) result |= hwp_energy_performance_preference;
-            if (leaf6.eax_bit(11u)) result |= hwp_package_level_request;
-            if (leaf6.eax_bit(13u)) result |= hdc;
-            if (leaf6.eax_bit(14u)) result |= itbt3;
-            if (leaf6.eax_bit(15u)) result |= hwp_interrupt;
-            if (leaf6.eax_bit(16u)) result |= hwp_peci;
-            if (leaf6.eax_bit(17u)) result |= hwp_flexible;
-            if (leaf6.eax_bit(18u)) result |= hwp_fast_request;
-            if (leaf6.eax_bit(19u)) result |= hw_feedback;
-            if (leaf6.eax_bit(20u)) result |= hwp_ignore_request;
-            if (leaf6.eax_bit(22u)) result |= hwp_ctl;
-            if (leaf6.eax_bit(23u)) result |= thread_director;
-            if (leaf6.eax_bit(24u)) result |= therm_interrupt;
+            if (leaf_0x06.eax_bit( 0u)) result |= dts;
+            if (leaf_0x06.eax_bit( 1u)) result |= itbt;
+            if (leaf_0x06.eax_bit( 2u)) result |= arat;
+            if (leaf_0x06.eax_bit( 4u)) result |= pln;
+            if (leaf_0x06.eax_bit( 5u)) result |= ecmd;
+            if (leaf_0x06.eax_bit( 6u)) result |= ptm;
+            if (leaf_0x06.eax_bit( 7u)) result |= hwp;
+            if (leaf_0x06.eax_bit( 8u)) result |= hwp_notification;
+            if (leaf_0x06.eax_bit( 9u)) result |= hwp_activity_window;
+            if (leaf_0x06.eax_bit(10u)) result |= hwp_energy_performance_preference;
+            if (leaf_0x06.eax_bit(11u)) result |= hwp_package_level_request;
+            if (leaf_0x06.eax_bit(13u)) result |= hdc;
+            if (leaf_0x06.eax_bit(14u)) result |= itbt3;
+            if (leaf_0x06.eax_bit(15u)) result |= hwp_interrupt;
+            if (leaf_0x06.eax_bit(16u)) result |= hwp_peci;
+            if (leaf_0x06.eax_bit(17u)) result |= hwp_flexible;
+            if (leaf_0x06.eax_bit(18u)) result |= hwp_fast_request;
+            if (leaf_0x06.eax_bit(19u)) result |= hw_feedback;
+            if (leaf_0x06.eax_bit(20u)) result |= hwp_ignore_request;
+            if (leaf_0x06.eax_bit(22u)) result |= hwp_ctl;
+            if (leaf_0x06.eax_bit(23u)) result |= thread_director;
+            if (leaf_0x06.eax_bit(24u)) result |= therm_interrupt;
         }
 
         return result;

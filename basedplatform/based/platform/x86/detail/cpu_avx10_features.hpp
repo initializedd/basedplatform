@@ -18,9 +18,8 @@ namespace based::platform::x86::detail {
         avx10_converged_bit_5,
         avx10_converged_bit_6,
         avx10_converged_bit_7,
-        // bits 15:8 reserved
-        avx10_128,
-        avx10_256,
+        // bits 16:8 reserved
+        avx10_256             = 17u,
         avx10_512
         // bits 31:19 reserved
     }; // enum class cpu_avx10_feature
@@ -34,8 +33,6 @@ namespace based::platform::x86::detail {
                         | 1u << std::to_underlying(cpu_avx10_feature::avx10_converged_bit_5)
                         | 1u << std::to_underlying(cpu_avx10_feature::avx10_converged_bit_6)
                         | 1u << std::to_underlying(cpu_avx10_feature::avx10_converged_bit_7),
-        // bits 15:8 reserved
-        avx10_128       = 1u << std::to_underlying(cpu_avx10_feature::avx10_128),
         avx10_256       = 1u << std::to_underlying(cpu_avx10_feature::avx10_256),
         avx10_512       = 1u << std::to_underlying(cpu_avx10_feature::avx10_512)
         // bits 31:19 reserved
@@ -47,20 +44,19 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x24) {
             using enum cpu_avx10_feature;
-            const auto leaf24 = cpu_id(0x24, 0x00);
+            const auto leaf_0x24 = cpu_id(0x24, 0x00);
 
             // ebx register
-            if (leaf24.ebx_bit( 0u)) result |= avx10_converged_bit_0;
-            if (leaf24.ebx_bit( 1u)) result |= avx10_converged_bit_1;
-            if (leaf24.ebx_bit( 2u)) result |= avx10_converged_bit_2;
-            if (leaf24.ebx_bit( 3u)) result |= avx10_converged_bit_3;
-            if (leaf24.ebx_bit( 4u)) result |= avx10_converged_bit_4;
-            if (leaf24.ebx_bit( 5u)) result |= avx10_converged_bit_5;
-            if (leaf24.ebx_bit( 6u)) result |= avx10_converged_bit_6;
-            if (leaf24.ebx_bit( 7u)) result |= avx10_converged_bit_7;
-            if (leaf24.ebx_bit(16u)) result |= avx10_128;
-            if (leaf24.ebx_bit(17u)) result |= avx10_256;
-            if (leaf24.ebx_bit(18u)) result |= avx10_512;
+            if (leaf_0x24.ebx_bit( 0u)) result |= avx10_converged_bit_0;
+            if (leaf_0x24.ebx_bit( 1u)) result |= avx10_converged_bit_1;
+            if (leaf_0x24.ebx_bit( 2u)) result |= avx10_converged_bit_2;
+            if (leaf_0x24.ebx_bit( 3u)) result |= avx10_converged_bit_3;
+            if (leaf_0x24.ebx_bit( 4u)) result |= avx10_converged_bit_4;
+            if (leaf_0x24.ebx_bit( 5u)) result |= avx10_converged_bit_5;
+            if (leaf_0x24.ebx_bit( 6u)) result |= avx10_converged_bit_6;
+            if (leaf_0x24.ebx_bit( 7u)) result |= avx10_converged_bit_7;
+            if (leaf_0x24.ebx_bit(17u)) result |= avx10_256;
+            if (leaf_0x24.ebx_bit(18u)) result |= avx10_512;
         }
 
         return result;

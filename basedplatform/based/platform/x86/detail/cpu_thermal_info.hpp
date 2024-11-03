@@ -30,13 +30,13 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x06) {
             using enum cpu_thermal_info;
-            const auto leaf6 = cpu_id(0x06, 0x00);
+            const auto leaf_0x06 = cpu_id(0x06, 0x00);
 
             // ebx register
-            if (leaf6.ebx_bit( 0u)) result |= num_of_interrupt_thresholds_bit_0;
-            if (leaf6.ebx_bit( 1u)) result |= num_of_interrupt_thresholds_bit_1;
-            if (leaf6.ebx_bit( 2u)) result |= num_of_interrupt_thresholds_bit_2;
-            if (leaf6.ebx_bit( 3u)) result |= num_of_interrupt_thresholds_bit_3;
+            if (leaf_0x06.ebx_bit( 0u)) result |= num_of_interrupt_thresholds_bit_0;
+            if (leaf_0x06.ebx_bit( 1u)) result |= num_of_interrupt_thresholds_bit_1;
+            if (leaf_0x06.ebx_bit( 2u)) result |= num_of_interrupt_thresholds_bit_2;
+            if (leaf_0x06.ebx_bit( 3u)) result |= num_of_interrupt_thresholds_bit_3;
         }
 
         return result;

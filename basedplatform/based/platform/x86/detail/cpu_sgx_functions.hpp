@@ -38,16 +38,16 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x12) {
             using enum cpu_sgx_function;
-            const auto leaf12 = cpu_id(0x12, 0x00);
+            const auto leaf_0x12 = cpu_id(0x12, 0x00);
 
             // eax register
-            if (leaf12.eax_bit( 0u)) result |= sgx1;
-            if (leaf12.eax_bit( 1u)) result |= sgx2;
-            if (leaf12.eax_bit( 5u)) result |= oss;
-            if (leaf12.eax_bit( 6u)) result |= encls;
-            if (leaf12.eax_bit( 7u)) result |= everifyreport2;
-            if (leaf12.eax_bit(10u)) result |= eupdatesvn;
-            if (leaf12.eax_bit(11u)) result |= edecssa;
+            if (leaf_0x12.eax_bit( 0u)) result |= sgx1;
+            if (leaf_0x12.eax_bit( 1u)) result |= sgx2;
+            if (leaf_0x12.eax_bit( 5u)) result |= oss;
+            if (leaf_0x12.eax_bit( 6u)) result |= encls;
+            if (leaf_0x12.eax_bit( 7u)) result |= everifyreport2;
+            if (leaf_0x12.eax_bit(10u)) result |= eupdatesvn;
+            if (leaf_0x12.eax_bit(11u)) result |= edecssa;
         }
 
         return result;

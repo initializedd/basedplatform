@@ -45,9 +45,9 @@ namespace based::platform::x86::detail {
     enum class cpu_key_locker_security : std::uint8_t {
         aes_kle,
         // bit 1 reserved
-        aes_wide_kl,
+        aes_wide_kl = 2u,
         // bit 3 reserved
-        kl_msrs
+        kl_msrs     = 4u
         // bits 31:5 reserved
     }; // enum class cpu_key_locker_security : std::uint8_t
 
@@ -63,12 +63,12 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x19) {
             using enum cpu_key_locker_security;
-            const auto leaf19 = cpu_id(0x19, 0x00);
+            const auto leaf_0x19 = cpu_id(0x19, 0x00);
 
             // ebx register
-            if (leaf19.eax_bit(0u)) result |= aes_kle;
-            if (leaf19.eax_bit(2u)) result |= aes_wide_kl;
-            if (leaf19.eax_bit(4u)) result |= kl_msrs;
+            if (leaf_0x19.eax_bit(0u)) result |= aes_kle;
+            if (leaf_0x19.eax_bit(2u)) result |= aes_wide_kl;
+            if (leaf_0x19.eax_bit(4u)) result |= kl_msrs;
         }
 
         return result;
@@ -91,11 +91,11 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x19) {
             using enum cpu_key_locker_meta;
-            const auto leaf19 = cpu_id(0x19, 0x00);
+            const auto leaf_0x19 = cpu_id(0x19, 0x00);
 
             // ecx register
-            if (leaf19.eax_bit(0u)) result |= loadiwkey_no_backup_parameter;
-            if (leaf19.eax_bit(1u)) result |= key_source_encoding_of_1;
+            if (leaf_0x19.eax_bit(0u)) result |= loadiwkey_no_backup_parameter;
+            if (leaf_0x19.eax_bit(1u)) result |= key_source_encoding_of_1;
         }
 
         return result;

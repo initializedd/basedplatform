@@ -82,38 +82,38 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000001) {
             using enum cpu_extended_core_info;
-            const auto leaf8 = cpu_id(0x80000001, 0x00);
+            const auto leaf_0x80000001 = cpu_id(0x80000001, 0x00);
 
             // edx register
-            if (leaf8.edx_bit( 0u)) result |= fpu;
-            if (leaf8.edx_bit( 1u)) result |= vme;
-            if (leaf8.edx_bit( 2u)) result |= de;
-            if (leaf8.edx_bit( 3u)) result |= pse;
-            if (leaf8.edx_bit( 4u)) result |= tsc;
-            if (leaf8.edx_bit( 5u)) result |= msr;
-            if (leaf8.edx_bit( 6u)) result |= pae;
-            if (leaf8.edx_bit( 7u)) result |= mce;
-            if (leaf8.edx_bit( 8u)) result |= cx8;
-            if (leaf8.edx_bit( 9u)) result |= apic;
-            if (leaf8.edx_bit(10u)) result |= syscall_k6;
-            if (leaf8.edx_bit(11u)) result |= syscall;
-            if (leaf8.edx_bit(12u)) result |= mtrr;
-            if (leaf8.edx_bit(13u)) result |= pge;
-            if (leaf8.edx_bit(14u)) result |= mca;
-            if (leaf8.edx_bit(15u)) result |= cmov;
-            if (leaf8.edx_bit(16u)) result |= pat;
-            if (leaf8.edx_bit(17u)) result |= pse36;
-            if (leaf8.edx_bit(19u)) result |= ecc;
-            if (leaf8.edx_bit(20u)) result |= nx;
-            if (leaf8.edx_bit(22u)) result |= mmxext;
-            if (leaf8.edx_bit(23u)) result |= mmx;
-            if (leaf8.edx_bit(24u)) result |= fxsr;
-            if (leaf8.edx_bit(25u)) result |= fxsr_opt;
-            if (leaf8.edx_bit(26u)) result |= pdpe1gb;
-            if (leaf8.edx_bit(27u)) result |= rdtscp;
-            if (leaf8.edx_bit(29u)) result |= lm;
-            if (leaf8.edx_bit(30u)) result |= now3dext;
-            if (leaf8.edx_bit(31u)) result |= now3d;
+            if (leaf_0x80000001.edx_bit( 0u)) result |= fpu;
+            if (leaf_0x80000001.edx_bit( 1u)) result |= vme;
+            if (leaf_0x80000001.edx_bit( 2u)) result |= de;
+            if (leaf_0x80000001.edx_bit( 3u)) result |= pse;
+            if (leaf_0x80000001.edx_bit( 4u)) result |= tsc;
+            if (leaf_0x80000001.edx_bit( 5u)) result |= msr;
+            if (leaf_0x80000001.edx_bit( 6u)) result |= pae;
+            if (leaf_0x80000001.edx_bit( 7u)) result |= mce;
+            if (leaf_0x80000001.edx_bit( 8u)) result |= cx8;
+            if (leaf_0x80000001.edx_bit( 9u)) result |= apic;
+            if (leaf_0x80000001.edx_bit(10u)) result |= syscall_k6;
+            if (leaf_0x80000001.edx_bit(11u)) result |= syscall;
+            if (leaf_0x80000001.edx_bit(12u)) result |= mtrr;
+            if (leaf_0x80000001.edx_bit(13u)) result |= pge;
+            if (leaf_0x80000001.edx_bit(14u)) result |= mca;
+            if (leaf_0x80000001.edx_bit(15u)) result |= cmov;
+            if (leaf_0x80000001.edx_bit(16u)) result |= pat;
+            if (leaf_0x80000001.edx_bit(17u)) result |= pse36;
+            if (leaf_0x80000001.edx_bit(19u)) result |= ecc;
+            if (leaf_0x80000001.edx_bit(20u)) result |= nx;
+            if (leaf_0x80000001.edx_bit(22u)) result |= mmxext;
+            if (leaf_0x80000001.edx_bit(23u)) result |= mmx;
+            if (leaf_0x80000001.edx_bit(24u)) result |= fxsr;
+            if (leaf_0x80000001.edx_bit(25u)) result |= fxsr_opt;
+            if (leaf_0x80000001.edx_bit(26u)) result |= pdpe1gb;
+            if (leaf_0x80000001.edx_bit(27u)) result |= rdtscp;
+            if (leaf_0x80000001.edx_bit(29u)) result |= lm;
+            if (leaf_0x80000001.edx_bit(30u)) result |= now3dext;
+            if (leaf_0x80000001.edx_bit(31u)) result |= now3d;
         }
 
         return result;

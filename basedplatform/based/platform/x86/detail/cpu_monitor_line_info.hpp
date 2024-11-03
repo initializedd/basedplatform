@@ -54,25 +54,25 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x05) {
             using enum cpu_smallest_monitor_line_info;
-            const auto leaf5 = cpu_id(0x05, 0x00);
+            const auto leaf_0x05 = cpu_id(0x05, 0x00);
 
             // eax register
-            if (leaf5.eax_bit( 0u)) result |= smallest_monitor_line_bit_0;
-            if (leaf5.eax_bit( 1u)) result |= smallest_monitor_line_bit_1;
-            if (leaf5.eax_bit( 2u)) result |= smallest_monitor_line_bit_2;
-            if (leaf5.eax_bit( 3u)) result |= smallest_monitor_line_bit_3;
-            if (leaf5.eax_bit( 4u)) result |= smallest_monitor_line_bit_4;
-            if (leaf5.eax_bit( 5u)) result |= smallest_monitor_line_bit_5;
-            if (leaf5.eax_bit( 6u)) result |= smallest_monitor_line_bit_6;
-            if (leaf5.eax_bit( 7u)) result |= smallest_monitor_line_bit_7;
-            if (leaf5.eax_bit( 8u)) result |= smallest_monitor_line_bit_8;
-            if (leaf5.eax_bit( 9u)) result |= smallest_monitor_line_bit_9;
-            if (leaf5.eax_bit(10u)) result |= smallest_monitor_line_bit_10;
-            if (leaf5.eax_bit(11u)) result |= smallest_monitor_line_bit_11;
-            if (leaf5.eax_bit(12u)) result |= smallest_monitor_line_bit_12;
-            if (leaf5.eax_bit(13u)) result |= smallest_monitor_line_bit_13;
-            if (leaf5.eax_bit(14u)) result |= smallest_monitor_line_bit_14;
-            if (leaf5.eax_bit(15u)) result |= smallest_monitor_line_bit_15;
+            if (leaf_0x05.eax_bit( 0u)) result |= smallest_monitor_line_bit_0;
+            if (leaf_0x05.eax_bit( 1u)) result |= smallest_monitor_line_bit_1;
+            if (leaf_0x05.eax_bit( 2u)) result |= smallest_monitor_line_bit_2;
+            if (leaf_0x05.eax_bit( 3u)) result |= smallest_monitor_line_bit_3;
+            if (leaf_0x05.eax_bit( 4u)) result |= smallest_monitor_line_bit_4;
+            if (leaf_0x05.eax_bit( 5u)) result |= smallest_monitor_line_bit_5;
+            if (leaf_0x05.eax_bit( 6u)) result |= smallest_monitor_line_bit_6;
+            if (leaf_0x05.eax_bit( 7u)) result |= smallest_monitor_line_bit_7;
+            if (leaf_0x05.eax_bit( 8u)) result |= smallest_monitor_line_bit_8;
+            if (leaf_0x05.eax_bit( 9u)) result |= smallest_monitor_line_bit_9;
+            if (leaf_0x05.eax_bit(10u)) result |= smallest_monitor_line_bit_10;
+            if (leaf_0x05.eax_bit(11u)) result |= smallest_monitor_line_bit_11;
+            if (leaf_0x05.eax_bit(12u)) result |= smallest_monitor_line_bit_12;
+            if (leaf_0x05.eax_bit(13u)) result |= smallest_monitor_line_bit_13;
+            if (leaf_0x05.eax_bit(14u)) result |= smallest_monitor_line_bit_14;
+            if (leaf_0x05.eax_bit(15u)) result |= smallest_monitor_line_bit_15;
         }
 
         return result;
@@ -123,25 +123,25 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x05) {
             using enum cpu_largest_monitor_line_info;
-            const auto leaf5 = cpu_id(0x05, 0x00);
+            const auto leaf_0x05 = cpu_id(0x05, 0x00);
 
             // ebx register
-            if (leaf5.ebx_bit( 0u)) result |= largest_monitor_line_bit_0;
-            if (leaf5.ebx_bit( 1u)) result |= largest_monitor_line_bit_1;
-            if (leaf5.ebx_bit( 2u)) result |= largest_monitor_line_bit_2;
-            if (leaf5.ebx_bit( 3u)) result |= largest_monitor_line_bit_3;
-            if (leaf5.ebx_bit( 4u)) result |= largest_monitor_line_bit_4;
-            if (leaf5.ebx_bit( 5u)) result |= largest_monitor_line_bit_5;
-            if (leaf5.ebx_bit( 6u)) result |= largest_monitor_line_bit_6;
-            if (leaf5.ebx_bit( 7u)) result |= largest_monitor_line_bit_7;
-            if (leaf5.ebx_bit( 8u)) result |= largest_monitor_line_bit_8;
-            if (leaf5.ebx_bit( 9u)) result |= largest_monitor_line_bit_9;
-            if (leaf5.ebx_bit(10u)) result |= largest_monitor_line_bit_10;
-            if (leaf5.ebx_bit(11u)) result |= largest_monitor_line_bit_11;
-            if (leaf5.ebx_bit(12u)) result |= largest_monitor_line_bit_12;
-            if (leaf5.ebx_bit(13u)) result |= largest_monitor_line_bit_13;
-            if (leaf5.ebx_bit(14u)) result |= largest_monitor_line_bit_14;
-            if (leaf5.ebx_bit(15u)) result |= largest_monitor_line_bit_15;
+            if (leaf_0x05.ebx_bit( 0u)) result |= largest_monitor_line_bit_0;
+            if (leaf_0x05.ebx_bit( 1u)) result |= largest_monitor_line_bit_1;
+            if (leaf_0x05.ebx_bit( 2u)) result |= largest_monitor_line_bit_2;
+            if (leaf_0x05.ebx_bit( 3u)) result |= largest_monitor_line_bit_3;
+            if (leaf_0x05.ebx_bit( 4u)) result |= largest_monitor_line_bit_4;
+            if (leaf_0x05.ebx_bit( 5u)) result |= largest_monitor_line_bit_5;
+            if (leaf_0x05.ebx_bit( 6u)) result |= largest_monitor_line_bit_6;
+            if (leaf_0x05.ebx_bit( 7u)) result |= largest_monitor_line_bit_7;
+            if (leaf_0x05.ebx_bit( 8u)) result |= largest_monitor_line_bit_8;
+            if (leaf_0x05.ebx_bit( 9u)) result |= largest_monitor_line_bit_9;
+            if (leaf_0x05.ebx_bit(10u)) result |= largest_monitor_line_bit_10;
+            if (leaf_0x05.ebx_bit(11u)) result |= largest_monitor_line_bit_11;
+            if (leaf_0x05.ebx_bit(12u)) result |= largest_monitor_line_bit_12;
+            if (leaf_0x05.ebx_bit(13u)) result |= largest_monitor_line_bit_13;
+            if (leaf_0x05.ebx_bit(14u)) result |= largest_monitor_line_bit_14;
+            if (leaf_0x05.ebx_bit(15u)) result |= largest_monitor_line_bit_15;
         }
 
         return result;

@@ -79,36 +79,36 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000008) {
             using enum cpu_address_feature;
-            const auto leaf8 = cpu_id(0x80000008, 0x00);
+            const auto leaf_0x80000008 = cpu_id(0x80000008, 0x00);
 
             // ebx register
-            if (leaf8.ebx_bit( 0u)) result |= clzero;
-            if (leaf8.ebx_bit( 1u)) result |= retired_instr;
-            if (leaf8.ebx_bit( 2u)) result |= xrstor_fp_err;
-            if (leaf8.ebx_bit( 3u)) result |= invlpgb;
-            if (leaf8.ebx_bit( 4u)) result |= rdpru;
-            if (leaf8.ebx_bit( 6u)) result |= mbe;
-            if (leaf8.ebx_bit( 8u)) result |= mcommit;
-            if (leaf8.ebx_bit( 9u)) result |= wbnoinvd;
-            if (leaf8.ebx_bit(12u)) result |= ibpb;
-            if (leaf8.ebx_bit(13u)) result |= wbinvd_int;
-            if (leaf8.ebx_bit(14u)) result |= ibrs;
-            if (leaf8.ebx_bit(15u)) result |= stibp;
-            if (leaf8.ebx_bit(16u)) result |= ibrs_always_on;
-            if (leaf8.ebx_bit(17u)) result |= stibp_always_on;
-            if (leaf8.ebx_bit(18u)) result |= ibrs_preferred;
-            if (leaf8.ebx_bit(19u)) result |= ibrs_same_mode_protection;
-            if (leaf8.ebx_bit(20u)) result |= no_efer_lmsle;
-            if (leaf8.ebx_bit(21u)) result |= invlpgb_nested;
-            if (leaf8.ebx_bit(23u)) result |= ppin;
-            if (leaf8.ebx_bit(24u)) result |= ssbd;
-            if (leaf8.ebx_bit(25u)) result |= ssbd_legacy;
-            if (leaf8.ebx_bit(26u)) result |= ssbd_no;
-            if (leaf8.ebx_bit(27u)) result |= cppc;
-            if (leaf8.ebx_bit(28u)) result |= psfd;
-            if (leaf8.ebx_bit(29u)) result |= btc_no;
-            if (leaf8.ebx_bit(30u)) result |= ibpb_ret;
-            if (leaf8.ebx_bit(31u)) result |= branch_sampling;
+            if (leaf_0x80000008.ebx_bit( 0u)) result |= clzero;
+            if (leaf_0x80000008.ebx_bit( 1u)) result |= retired_instr;
+            if (leaf_0x80000008.ebx_bit( 2u)) result |= xrstor_fp_err;
+            if (leaf_0x80000008.ebx_bit( 3u)) result |= invlpgb;
+            if (leaf_0x80000008.ebx_bit( 4u)) result |= rdpru;
+            if (leaf_0x80000008.ebx_bit( 6u)) result |= mbe;
+            if (leaf_0x80000008.ebx_bit( 8u)) result |= mcommit;
+            if (leaf_0x80000008.ebx_bit( 9u)) result |= wbnoinvd;
+            if (leaf_0x80000008.ebx_bit(12u)) result |= ibpb;
+            if (leaf_0x80000008.ebx_bit(13u)) result |= wbinvd_int;
+            if (leaf_0x80000008.ebx_bit(14u)) result |= ibrs;
+            if (leaf_0x80000008.ebx_bit(15u)) result |= stibp;
+            if (leaf_0x80000008.ebx_bit(16u)) result |= ibrs_always_on;
+            if (leaf_0x80000008.ebx_bit(17u)) result |= stibp_always_on;
+            if (leaf_0x80000008.ebx_bit(18u)) result |= ibrs_preferred;
+            if (leaf_0x80000008.ebx_bit(19u)) result |= ibrs_same_mode_protection;
+            if (leaf_0x80000008.ebx_bit(20u)) result |= no_efer_lmsle;
+            if (leaf_0x80000008.ebx_bit(21u)) result |= invlpgb_nested;
+            if (leaf_0x80000008.ebx_bit(23u)) result |= ppin;
+            if (leaf_0x80000008.ebx_bit(24u)) result |= ssbd;
+            if (leaf_0x80000008.ebx_bit(25u)) result |= ssbd_legacy;
+            if (leaf_0x80000008.ebx_bit(26u)) result |= ssbd_no;
+            if (leaf_0x80000008.ebx_bit(27u)) result |= cppc;
+            if (leaf_0x80000008.ebx_bit(28u)) result |= psfd;
+            if (leaf_0x80000008.ebx_bit(29u)) result |= btc_no;
+            if (leaf_0x80000008.ebx_bit(30u)) result |= ibpb_ret;
+            if (leaf_0x80000008.ebx_bit(31u)) result |= branch_sampling;
         }
 
         return result;

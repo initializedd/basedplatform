@@ -13,13 +13,15 @@ namespace based::platform::x86::detail {
         // bits 1:0 reserved
         legacy_reduced_isa = 2u,
         // bit 3 reserved
-        sipi64             = 4u
-        // bits 31:5 reserved
+        sipi64             = 4u,
+        msr_imm
+        // bits 31:6 reserved
     }; // enum class cpu_extended_compat_feature : std::uint8_t
 
     enum class cpu_extended_compat_feature_mask : std::uint32_t {
         legacy_reduced_isa = 1u << std::to_underlying(cpu_extended_compat_feature::legacy_reduced_isa),
-        sipi64             = 1u << std::to_underlying(cpu_extended_compat_feature::sipi64)
+        sipi64             = 1u << std::to_underlying(cpu_extended_compat_feature::sipi64),
+        msr_imm            = 1u << std::to_underlying(cpu_extended_compat_feature::msr_imm)
     }; // enum class cpu_extended_compat_feature_mask : std::uint32_t
 
     [[nodiscard]]
@@ -28,11 +30,12 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_compat_feature;
-            const auto leaf7 = cpu_id(0x07, 0x01);
+            const auto leaf_0x07 = cpu_id(0x07, 0x01);
 
             // ecx register
-            if (leaf7.ecx_bit(2u)) result |= legacy_reduced_isa;
-            if (leaf7.ecx_bit(4u)) result |= sipi64;
+            if (leaf_0x07.ecx_bit(2u)) result |= legacy_reduced_isa;
+            if (leaf_0x07.ecx_bit(4u)) result |= sipi64;
+            if (leaf_0x07.ecx_bit(5u)) result |= msr_imm;
         }
 
         return result;

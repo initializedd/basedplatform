@@ -70,33 +70,33 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000008) {
             using enum cpu_address_info;
-            const auto leaf8 = cpu_id(0x80000008, 0x00);
+            const auto leaf_0x80000008 = cpu_id(0x80000008, 0x00);
 
             // eax register
-            if (leaf8.eax_bit( 0u)) result |= num_of_physical_address_bit_0;
-            if (leaf8.eax_bit( 1u)) result |= num_of_physical_address_bit_1;
-            if (leaf8.eax_bit( 2u)) result |= num_of_physical_address_bit_2;
-            if (leaf8.eax_bit( 3u)) result |= num_of_physical_address_bit_3;
-            if (leaf8.eax_bit( 4u)) result |= num_of_physical_address_bit_4;
-            if (leaf8.eax_bit( 5u)) result |= num_of_physical_address_bit_5;
-            if (leaf8.eax_bit( 6u)) result |= num_of_physical_address_bit_6;
-            if (leaf8.eax_bit( 7u)) result |= num_of_physical_address_bit_7;
-            if (leaf8.eax_bit( 8u)) result |= num_of_linear_address_bit_0;
-            if (leaf8.eax_bit( 9u)) result |= num_of_linear_address_bit_1;
-            if (leaf8.eax_bit(10u)) result |= num_of_linear_address_bit_2;
-            if (leaf8.eax_bit(11u)) result |= num_of_linear_address_bit_3;
-            if (leaf8.eax_bit(12u)) result |= num_of_linear_address_bit_4;
-            if (leaf8.eax_bit(13u)) result |= num_of_linear_address_bit_5;
-            if (leaf8.eax_bit(14u)) result |= num_of_linear_address_bit_6;
-            if (leaf8.eax_bit(15u)) result |= num_of_linear_address_bit_7;
-            if (leaf8.eax_bit(16u)) result |= guest_physical_address_size_bit_0;
-            if (leaf8.eax_bit(17u)) result |= guest_physical_address_size_bit_1;
-            if (leaf8.eax_bit(18u)) result |= guest_physical_address_size_bit_2;
-            if (leaf8.eax_bit(19u)) result |= guest_physical_address_size_bit_3;
-            if (leaf8.eax_bit(20u)) result |= guest_physical_address_size_bit_4;
-            if (leaf8.eax_bit(21u)) result |= guest_physical_address_size_bit_5;
-            if (leaf8.eax_bit(22u)) result |= guest_physical_address_size_bit_6;
-            if (leaf8.eax_bit(23u)) result |= guest_physical_address_size_bit_7;
+            if (leaf_0x80000008.eax_bit( 0u)) result |= num_of_physical_address_bit_0;
+            if (leaf_0x80000008.eax_bit( 1u)) result |= num_of_physical_address_bit_1;
+            if (leaf_0x80000008.eax_bit( 2u)) result |= num_of_physical_address_bit_2;
+            if (leaf_0x80000008.eax_bit( 3u)) result |= num_of_physical_address_bit_3;
+            if (leaf_0x80000008.eax_bit( 4u)) result |= num_of_physical_address_bit_4;
+            if (leaf_0x80000008.eax_bit( 5u)) result |= num_of_physical_address_bit_5;
+            if (leaf_0x80000008.eax_bit( 6u)) result |= num_of_physical_address_bit_6;
+            if (leaf_0x80000008.eax_bit( 7u)) result |= num_of_physical_address_bit_7;
+            if (leaf_0x80000008.eax_bit( 8u)) result |= num_of_linear_address_bit_0;
+            if (leaf_0x80000008.eax_bit( 9u)) result |= num_of_linear_address_bit_1;
+            if (leaf_0x80000008.eax_bit(10u)) result |= num_of_linear_address_bit_2;
+            if (leaf_0x80000008.eax_bit(11u)) result |= num_of_linear_address_bit_3;
+            if (leaf_0x80000008.eax_bit(12u)) result |= num_of_linear_address_bit_4;
+            if (leaf_0x80000008.eax_bit(13u)) result |= num_of_linear_address_bit_5;
+            if (leaf_0x80000008.eax_bit(14u)) result |= num_of_linear_address_bit_6;
+            if (leaf_0x80000008.eax_bit(15u)) result |= num_of_linear_address_bit_7;
+            if (leaf_0x80000008.eax_bit(16u)) result |= guest_physical_address_size_bit_0;
+            if (leaf_0x80000008.eax_bit(17u)) result |= guest_physical_address_size_bit_1;
+            if (leaf_0x80000008.eax_bit(18u)) result |= guest_physical_address_size_bit_2;
+            if (leaf_0x80000008.eax_bit(19u)) result |= guest_physical_address_size_bit_3;
+            if (leaf_0x80000008.eax_bit(20u)) result |= guest_physical_address_size_bit_4;
+            if (leaf_0x80000008.eax_bit(21u)) result |= guest_physical_address_size_bit_5;
+            if (leaf_0x80000008.eax_bit(22u)) result |= guest_physical_address_size_bit_6;
+            if (leaf_0x80000008.eax_bit(23u)) result |= guest_physical_address_size_bit_7;
         }
 
         return result;

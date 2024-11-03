@@ -51,23 +51,23 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000008) {
             using enum cpu_thread_info;
-            const auto leaf8 = cpu_id(0x80000008, 0x00);
+            const auto leaf_0x80000008 = cpu_id(0x80000008, 0x00);
 
             // ecx register
-            if (leaf8.ecx_bit( 0u)) result |= num_of_physical_address_bit_0;
-            if (leaf8.ecx_bit( 1u)) result |= num_of_physical_address_bit_1;
-            if (leaf8.ecx_bit( 2u)) result |= num_of_physical_address_bit_2;
-            if (leaf8.ecx_bit( 3u)) result |= num_of_physical_address_bit_3;
-            if (leaf8.ecx_bit( 4u)) result |= num_of_physical_address_bit_4;
-            if (leaf8.ecx_bit( 5u)) result |= num_of_physical_address_bit_5;
-            if (leaf8.ecx_bit( 6u)) result |= num_of_physical_address_bit_6;
-            if (leaf8.ecx_bit( 7u)) result |= num_of_physical_address_bit_7;
-            if (leaf8.ecx_bit(12u)) result |= apic_id_size_bit_0;
-            if (leaf8.ecx_bit(13u)) result |= apic_id_size_bit_1;
-            if (leaf8.ecx_bit(14u)) result |= apic_id_size_bit_2;
-            if (leaf8.ecx_bit(15u)) result |= apic_id_size_bit_3;
-            if (leaf8.ecx_bit(16u)) result |= performance_timestamp_counter_size_bit_0;
-            if (leaf8.ecx_bit(17u)) result |= performance_timestamp_counter_size_bit_1;
+            if (leaf_0x80000008.ecx_bit( 0u)) result |= num_of_physical_threads_bit_0;
+            if (leaf_0x80000008.ecx_bit( 1u)) result |= num_of_physical_threads_bit_1;
+            if (leaf_0x80000008.ecx_bit( 2u)) result |= num_of_physical_threads_bit_2;
+            if (leaf_0x80000008.ecx_bit( 3u)) result |= num_of_physical_threads_bit_3;
+            if (leaf_0x80000008.ecx_bit( 4u)) result |= num_of_physical_threads_bit_4;
+            if (leaf_0x80000008.ecx_bit( 5u)) result |= num_of_physical_threads_bit_5;
+            if (leaf_0x80000008.ecx_bit( 6u)) result |= num_of_physical_threads_bit_6;
+            if (leaf_0x80000008.ecx_bit( 7u)) result |= num_of_physical_threads_bit_7;
+            if (leaf_0x80000008.ecx_bit(12u)) result |= apic_id_size_bit_0;
+            if (leaf_0x80000008.ecx_bit(13u)) result |= apic_id_size_bit_1;
+            if (leaf_0x80000008.ecx_bit(14u)) result |= apic_id_size_bit_2;
+            if (leaf_0x80000008.ecx_bit(15u)) result |= apic_id_size_bit_3;
+            if (leaf_0x80000008.ecx_bit(16u)) result |= performance_timestamp_counter_size_bit_0;
+            if (leaf_0x80000008.ecx_bit(17u)) result |= performance_timestamp_counter_size_bit_1;
         }
 
         return result;

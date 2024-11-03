@@ -36,16 +36,16 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_timing_feature;
-            const auto leaf7 = cpu_id(0x07, 0x02);
+            const auto leaf_0x07 = cpu_id(0x07, 0x02);
 
             // edx register
-            if (leaf7.edx_bit(0u)) result |= psfd;
-            if (leaf7.edx_bit(1u)) result |= ipred_ctrl;
-            if (leaf7.edx_bit(2u)) result |= rrsba_ctrl;
-            if (leaf7.edx_bit(3u)) result |= ddpd_u;
-            if (leaf7.edx_bit(4u)) result |= bhi_ctrl;
-            if (leaf7.edx_bit(5u)) result |= mcdt_no;
-            if (leaf7.edx_bit(6u)) result |= uc_lock;
+            if (leaf_0x07.edx_bit(0u)) result |= psfd;
+            if (leaf_0x07.edx_bit(1u)) result |= ipred_ctrl;
+            if (leaf_0x07.edx_bit(2u)) result |= rrsba_ctrl;
+            if (leaf_0x07.edx_bit(3u)) result |= ddpd_u;
+            if (leaf_0x07.edx_bit(4u)) result |= bhi_ctrl;
+            if (leaf_0x07.edx_bit(5u)) result |= mcdt_no;
+            if (leaf_0x07.edx_bit(6u)) result |= uc_lock;
         }
 
         return result;

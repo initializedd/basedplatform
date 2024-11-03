@@ -85,41 +85,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x8000000A) {
             using enum cpu_svm_address_space_identifier;
-            const auto leaf8 = cpu_id(0x8000000A, 0x00);
+            const auto leaf_0x8000000a = cpu_id(0x8000000A, 0x00);
 
             // ebx register
-            if (leaf8.ebx_bit( 0u)) result |= num_of_available_asids_bit_0;
-            if (leaf8.ebx_bit( 1u)) result |= num_of_available_asids_bit_1;
-            if (leaf8.ebx_bit( 2u)) result |= num_of_available_asids_bit_2;
-            if (leaf8.ebx_bit( 3u)) result |= num_of_available_asids_bit_3;
-            if (leaf8.ebx_bit( 4u)) result |= num_of_available_asids_bit_4;
-            if (leaf8.ebx_bit( 5u)) result |= num_of_available_asids_bit_5;
-            if (leaf8.ebx_bit( 6u)) result |= num_of_available_asids_bit_6;
-            if (leaf8.ebx_bit( 7u)) result |= num_of_available_asids_bit_7;
-            if (leaf8.ebx_bit( 8u)) result |= num_of_available_asids_bit_8;
-            if (leaf8.ebx_bit( 9u)) result |= num_of_available_asids_bit_9;
-            if (leaf8.ebx_bit(10u)) result |= num_of_available_asids_bit_10;
-            if (leaf8.ebx_bit(11u)) result |= num_of_available_asids_bit_11;
-            if (leaf8.ebx_bit(12u)) result |= num_of_available_asids_bit_12;
-            if (leaf8.ebx_bit(13u)) result |= num_of_available_asids_bit_13;
-            if (leaf8.ebx_bit(14u)) result |= num_of_available_asids_bit_14;
-            if (leaf8.ebx_bit(15u)) result |= num_of_available_asids_bit_15;
-            if (leaf8.ebx_bit(16u)) result |= num_of_available_asids_bit_16;
-            if (leaf8.ebx_bit(17u)) result |= num_of_available_asids_bit_17;
-            if (leaf8.ebx_bit(18u)) result |= num_of_available_asids_bit_18;
-            if (leaf8.ebx_bit(19u)) result |= num_of_available_asids_bit_19;
-            if (leaf8.ebx_bit(20u)) result |= num_of_available_asids_bit_20;
-            if (leaf8.ebx_bit(21u)) result |= num_of_available_asids_bit_21;
-            if (leaf8.ebx_bit(22u)) result |= num_of_available_asids_bit_22;
-            if (leaf8.ebx_bit(23u)) result |= num_of_available_asids_bit_23;
-            if (leaf8.ebx_bit(24u)) result |= num_of_available_asids_bit_24;
-            if (leaf8.ebx_bit(25u)) result |= num_of_available_asids_bit_25;
-            if (leaf8.ebx_bit(26u)) result |= num_of_available_asids_bit_26;
-            if (leaf8.ebx_bit(27u)) result |= num_of_available_asids_bit_27;
-            if (leaf8.ebx_bit(28u)) result |= num_of_available_asids_bit_28;
-            if (leaf8.ebx_bit(29u)) result |= num_of_available_asids_bit_29;
-            if (leaf8.ebx_bit(30u)) result |= num_of_available_asids_bit_30;
-            if (leaf8.ebx_bit(31u)) result |= num_of_available_asids_bit_31;
+            if (leaf_0x8000000a.ebx_bit( 0u)) result |= num_of_available_asids_bit_0;
+            if (leaf_0x8000000a.ebx_bit( 1u)) result |= num_of_available_asids_bit_1;
+            if (leaf_0x8000000a.ebx_bit( 2u)) result |= num_of_available_asids_bit_2;
+            if (leaf_0x8000000a.ebx_bit( 3u)) result |= num_of_available_asids_bit_3;
+            if (leaf_0x8000000a.ebx_bit( 4u)) result |= num_of_available_asids_bit_4;
+            if (leaf_0x8000000a.ebx_bit( 5u)) result |= num_of_available_asids_bit_5;
+            if (leaf_0x8000000a.ebx_bit( 6u)) result |= num_of_available_asids_bit_6;
+            if (leaf_0x8000000a.ebx_bit( 7u)) result |= num_of_available_asids_bit_7;
+            if (leaf_0x8000000a.ebx_bit( 8u)) result |= num_of_available_asids_bit_8;
+            if (leaf_0x8000000a.ebx_bit( 9u)) result |= num_of_available_asids_bit_9;
+            if (leaf_0x8000000a.ebx_bit(10u)) result |= num_of_available_asids_bit_10;
+            if (leaf_0x8000000a.ebx_bit(11u)) result |= num_of_available_asids_bit_11;
+            if (leaf_0x8000000a.ebx_bit(12u)) result |= num_of_available_asids_bit_12;
+            if (leaf_0x8000000a.ebx_bit(13u)) result |= num_of_available_asids_bit_13;
+            if (leaf_0x8000000a.ebx_bit(14u)) result |= num_of_available_asids_bit_14;
+            if (leaf_0x8000000a.ebx_bit(15u)) result |= num_of_available_asids_bit_15;
+            if (leaf_0x8000000a.ebx_bit(16u)) result |= num_of_available_asids_bit_16;
+            if (leaf_0x8000000a.ebx_bit(17u)) result |= num_of_available_asids_bit_17;
+            if (leaf_0x8000000a.ebx_bit(18u)) result |= num_of_available_asids_bit_18;
+            if (leaf_0x8000000a.ebx_bit(19u)) result |= num_of_available_asids_bit_19;
+            if (leaf_0x8000000a.ebx_bit(20u)) result |= num_of_available_asids_bit_20;
+            if (leaf_0x8000000a.ebx_bit(21u)) result |= num_of_available_asids_bit_21;
+            if (leaf_0x8000000a.ebx_bit(22u)) result |= num_of_available_asids_bit_22;
+            if (leaf_0x8000000a.ebx_bit(23u)) result |= num_of_available_asids_bit_23;
+            if (leaf_0x8000000a.ebx_bit(24u)) result |= num_of_available_asids_bit_24;
+            if (leaf_0x8000000a.ebx_bit(25u)) result |= num_of_available_asids_bit_25;
+            if (leaf_0x8000000a.ebx_bit(26u)) result |= num_of_available_asids_bit_26;
+            if (leaf_0x8000000a.ebx_bit(27u)) result |= num_of_available_asids_bit_27;
+            if (leaf_0x8000000a.ebx_bit(28u)) result |= num_of_available_asids_bit_28;
+            if (leaf_0x8000000a.ebx_bit(29u)) result |= num_of_available_asids_bit_29;
+            if (leaf_0x8000000a.ebx_bit(30u)) result |= num_of_available_asids_bit_30;
+            if (leaf_0x8000000a.ebx_bit(31u)) result |= num_of_available_asids_bit_31;
         }
 
         return result;

@@ -85,41 +85,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x01) {
             using enum cpu_info;
-            const auto leaf1 = cpu_id(0x01, 0x00);
+            const auto leaf_0x01 = cpu_id(0x01, 0x00);
 
             // ebx register
-            if (leaf1.ebx_bit( 0u)) result |= brand_index_bit_0;
-            if (leaf1.ebx_bit( 1u)) result |= brand_index_bit_1;
-            if (leaf1.ebx_bit( 2u)) result |= brand_index_bit_2;
-            if (leaf1.ebx_bit( 3u)) result |= brand_index_bit_3;
-            if (leaf1.ebx_bit( 4u)) result |= brand_index_bit_4;
-            if (leaf1.ebx_bit( 5u)) result |= brand_index_bit_5;
-            if (leaf1.ebx_bit( 6u)) result |= brand_index_bit_6;
-            if (leaf1.ebx_bit( 7u)) result |= brand_index_bit_7;
-            if (leaf1.ebx_bit( 8u)) result |= clflush_line_size_bit_0;
-            if (leaf1.ebx_bit( 9u)) result |= clflush_line_size_bit_1;
-            if (leaf1.ebx_bit(10u)) result |= clflush_line_size_bit_2;
-            if (leaf1.ebx_bit(11u)) result |= clflush_line_size_bit_3;
-            if (leaf1.ebx_bit(12u)) result |= clflush_line_size_bit_4;
-            if (leaf1.ebx_bit(13u)) result |= clflush_line_size_bit_5;
-            if (leaf1.ebx_bit(14u)) result |= clflush_line_size_bit_6;
-            if (leaf1.ebx_bit(15u)) result |= clflush_line_size_bit_7;
-            if (leaf1.ebx_bit(16u)) result |= max_num_of_logical_addressable_ids_bit_0;
-            if (leaf1.ebx_bit(17u)) result |= max_num_of_logical_addressable_ids_bit_1;
-            if (leaf1.ebx_bit(18u)) result |= max_num_of_logical_addressable_ids_bit_2;
-            if (leaf1.ebx_bit(19u)) result |= max_num_of_logical_addressable_ids_bit_3;
-            if (leaf1.ebx_bit(20u)) result |= max_num_of_logical_addressable_ids_bit_4;
-            if (leaf1.ebx_bit(21u)) result |= max_num_of_logical_addressable_ids_bit_5;
-            if (leaf1.ebx_bit(22u)) result |= max_num_of_logical_addressable_ids_bit_6;
-            if (leaf1.ebx_bit(23u)) result |= max_num_of_logical_addressable_ids_bit_7;
-            if (leaf1.ebx_bit(24u)) result |= local_apic_id_bit_0;
-            if (leaf1.ebx_bit(25u)) result |= local_apic_id_bit_1;
-            if (leaf1.ebx_bit(26u)) result |= local_apic_id_bit_2;
-            if (leaf1.ebx_bit(27u)) result |= local_apic_id_bit_3;
-            if (leaf1.ebx_bit(28u)) result |= local_apic_id_bit_4;
-            if (leaf1.ebx_bit(29u)) result |= local_apic_id_bit_5;
-            if (leaf1.ebx_bit(30u)) result |= local_apic_id_bit_6;
-            if (leaf1.ebx_bit(31u)) result |= local_apic_id_bit_7;
+            if (leaf_0x01.ebx_bit( 0u)) result |= brand_index_bit_0;
+            if (leaf_0x01.ebx_bit( 1u)) result |= brand_index_bit_1;
+            if (leaf_0x01.ebx_bit( 2u)) result |= brand_index_bit_2;
+            if (leaf_0x01.ebx_bit( 3u)) result |= brand_index_bit_3;
+            if (leaf_0x01.ebx_bit( 4u)) result |= brand_index_bit_4;
+            if (leaf_0x01.ebx_bit( 5u)) result |= brand_index_bit_5;
+            if (leaf_0x01.ebx_bit( 6u)) result |= brand_index_bit_6;
+            if (leaf_0x01.ebx_bit( 7u)) result |= brand_index_bit_7;
+            if (leaf_0x01.ebx_bit( 8u)) result |= clflush_line_size_bit_0;
+            if (leaf_0x01.ebx_bit( 9u)) result |= clflush_line_size_bit_1;
+            if (leaf_0x01.ebx_bit(10u)) result |= clflush_line_size_bit_2;
+            if (leaf_0x01.ebx_bit(11u)) result |= clflush_line_size_bit_3;
+            if (leaf_0x01.ebx_bit(12u)) result |= clflush_line_size_bit_4;
+            if (leaf_0x01.ebx_bit(13u)) result |= clflush_line_size_bit_5;
+            if (leaf_0x01.ebx_bit(14u)) result |= clflush_line_size_bit_6;
+            if (leaf_0x01.ebx_bit(15u)) result |= clflush_line_size_bit_7;
+            if (leaf_0x01.ebx_bit(16u)) result |= max_num_of_logical_addressable_ids_bit_0;
+            if (leaf_0x01.ebx_bit(17u)) result |= max_num_of_logical_addressable_ids_bit_1;
+            if (leaf_0x01.ebx_bit(18u)) result |= max_num_of_logical_addressable_ids_bit_2;
+            if (leaf_0x01.ebx_bit(19u)) result |= max_num_of_logical_addressable_ids_bit_3;
+            if (leaf_0x01.ebx_bit(20u)) result |= max_num_of_logical_addressable_ids_bit_4;
+            if (leaf_0x01.ebx_bit(21u)) result |= max_num_of_logical_addressable_ids_bit_5;
+            if (leaf_0x01.ebx_bit(22u)) result |= max_num_of_logical_addressable_ids_bit_6;
+            if (leaf_0x01.ebx_bit(23u)) result |= max_num_of_logical_addressable_ids_bit_7;
+            if (leaf_0x01.ebx_bit(24u)) result |= local_apic_id_bit_0;
+            if (leaf_0x01.ebx_bit(25u)) result |= local_apic_id_bit_1;
+            if (leaf_0x01.ebx_bit(26u)) result |= local_apic_id_bit_2;
+            if (leaf_0x01.ebx_bit(27u)) result |= local_apic_id_bit_3;
+            if (leaf_0x01.ebx_bit(28u)) result |= local_apic_id_bit_4;
+            if (leaf_0x01.ebx_bit(29u)) result |= local_apic_id_bit_5;
+            if (leaf_0x01.ebx_bit(30u)) result |= local_apic_id_bit_6;
+            if (leaf_0x01.ebx_bit(31u)) result |= local_apic_id_bit_7;
         }
 
         return result;

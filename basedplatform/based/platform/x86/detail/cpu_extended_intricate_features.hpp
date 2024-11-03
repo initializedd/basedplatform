@@ -79,36 +79,36 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_intricate_feature;
-            const auto leaf7 = cpu_id(0x07, 0x00);
+            const auto leaf_0x07 = cpu_id(0x07, 0x00);
 
             // edx register
-            if (leaf7.edx_bit( 0u)) result |= sgx_tem;
-            if (leaf7.edx_bit( 1u)) result |= sgx_keys;
-            if (leaf7.edx_bit( 2u)) result |= avx512_4vnniw;
-            if (leaf7.edx_bit( 3u)) result |= avx512_4fmaps;
-            if (leaf7.edx_bit( 4u)) result |= fsrm;
-            if (leaf7.edx_bit( 5u)) result |= uintr;
-            if (leaf7.edx_bit( 8u)) result |= avx512_vp2intersect;
-            if (leaf7.edx_bit( 9u)) result |= srbds_ctrl;
-            if (leaf7.edx_bit(10u)) result |= md_clear;
-            if (leaf7.edx_bit(11u)) result |= rtm_always_abort;
-            if (leaf7.edx_bit(13u)) result |= tsx_force_abort;
-            if (leaf7.edx_bit(14u)) result |= serialize;
-            if (leaf7.edx_bit(15u)) result |= hybrid;
-            if (leaf7.edx_bit(16u)) result |= tsxldtrk;
-            if (leaf7.edx_bit(18u)) result |= pconfig;
-            if (leaf7.edx_bit(19u)) result |= lbr;
-            if (leaf7.edx_bit(20u)) result |= cet_ibt;
-            if (leaf7.edx_bit(22u)) result |= amx_bf16;
-            if (leaf7.edx_bit(23u)) result |= avx512_fp16;
-            if (leaf7.edx_bit(24u)) result |= amx_tile;
-            if (leaf7.edx_bit(25u)) result |= amx_int8;
-            if (leaf7.edx_bit(26u)) result |= ibrs;
-            if (leaf7.edx_bit(27u)) result |= stibp;
-            if (leaf7.edx_bit(28u)) result |= l1d_flush;
-            if (leaf7.edx_bit(29u)) result |= arch_capabilities;
-            if (leaf7.edx_bit(30u)) result |= core_capabilities;
-            if (leaf7.edx_bit(31u)) result |= ssbd;
+            if (leaf_0x07.edx_bit( 0u)) result |= sgx_tem;
+            if (leaf_0x07.edx_bit( 1u)) result |= sgx_keys;
+            if (leaf_0x07.edx_bit( 2u)) result |= avx512_4vnniw;
+            if (leaf_0x07.edx_bit( 3u)) result |= avx512_4fmaps;
+            if (leaf_0x07.edx_bit( 4u)) result |= fsrm;
+            if (leaf_0x07.edx_bit( 5u)) result |= uintr;
+            if (leaf_0x07.edx_bit( 8u)) result |= avx512_vp2intersect;
+            if (leaf_0x07.edx_bit( 9u)) result |= srbds_ctrl;
+            if (leaf_0x07.edx_bit(10u)) result |= md_clear;
+            if (leaf_0x07.edx_bit(11u)) result |= rtm_always_abort;
+            if (leaf_0x07.edx_bit(13u)) result |= tsx_force_abort;
+            if (leaf_0x07.edx_bit(14u)) result |= serialize;
+            if (leaf_0x07.edx_bit(15u)) result |= hybrid;
+            if (leaf_0x07.edx_bit(16u)) result |= tsxldtrk;
+            if (leaf_0x07.edx_bit(18u)) result |= pconfig;
+            if (leaf_0x07.edx_bit(19u)) result |= lbr;
+            if (leaf_0x07.edx_bit(20u)) result |= cet_ibt;
+            if (leaf_0x07.edx_bit(22u)) result |= amx_bf16;
+            if (leaf_0x07.edx_bit(23u)) result |= avx512_fp16;
+            if (leaf_0x07.edx_bit(24u)) result |= amx_tile;
+            if (leaf_0x07.edx_bit(25u)) result |= amx_int8;
+            if (leaf_0x07.edx_bit(26u)) result |= ibrs;
+            if (leaf_0x07.edx_bit(27u)) result |= stibp;
+            if (leaf_0x07.edx_bit(28u)) result |= l1d_flush;
+            if (leaf_0x07.edx_bit(29u)) result |= arch_capabilities;
+            if (leaf_0x07.edx_bit(30u)) result |= core_capabilities;
+            if (leaf_0x07.edx_bit(31u)) result |= ssbd;
         }
 
         return result;

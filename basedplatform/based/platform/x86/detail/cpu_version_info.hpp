@@ -75,34 +75,34 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x01) {
             using enum cpu_version_info;
-            const auto leaf1 = cpu_id(0x01, 0x00);
+            const auto leaf_0x01 = cpu_id(0x01, 0x00);
 
-            if (leaf1.eax_bit( 0u)) result |= stepping_id_bit_0;
-            if (leaf1.eax_bit( 1u)) result |= stepping_id_bit_1;
-            if (leaf1.eax_bit( 2u)) result |= stepping_id_bit_2;
-            if (leaf1.eax_bit( 3u)) result |= stepping_id_bit_3;
-            if (leaf1.eax_bit( 4u)) result |= model_bit_0;
-            if (leaf1.eax_bit( 5u)) result |= model_bit_1;
-            if (leaf1.eax_bit( 6u)) result |= model_bit_2;
-            if (leaf1.eax_bit( 7u)) result |= model_bit_3;
-            if (leaf1.eax_bit( 8u)) result |= family_id_bit_0;
-            if (leaf1.eax_bit( 9u)) result |= family_id_bit_1;
-            if (leaf1.eax_bit(10u)) result |= family_id_bit_2;
-            if (leaf1.eax_bit(11u)) result |= family_id_bit_3;
-            if (leaf1.eax_bit(12u)) result |= processor_type_bit_0;
-            if (leaf1.eax_bit(13u)) result |= processor_type_bit_1;
-            if (leaf1.eax_bit(16u)) result |= extended_model_id_bit_0;
-            if (leaf1.eax_bit(17u)) result |= extended_model_id_bit_1;
-            if (leaf1.eax_bit(18u)) result |= extended_model_id_bit_2;
-            if (leaf1.eax_bit(19u)) result |= extended_model_id_bit_3;
-            if (leaf1.eax_bit(20u)) result |= extended_family_id_bit_0;
-            if (leaf1.eax_bit(21u)) result |= extended_family_id_bit_1;
-            if (leaf1.eax_bit(22u)) result |= extended_family_id_bit_2;
-            if (leaf1.eax_bit(23u)) result |= extended_family_id_bit_3;
-            if (leaf1.eax_bit(24u)) result |= extended_family_id_bit_4;
-            if (leaf1.eax_bit(25u)) result |= extended_family_id_bit_5;
-            if (leaf1.eax_bit(26u)) result |= extended_family_id_bit_6;
-            if (leaf1.eax_bit(27u)) result |= extended_family_id_bit_7;
+            if (leaf_0x01.eax_bit( 0u)) result |= stepping_id_bit_0;
+            if (leaf_0x01.eax_bit( 1u)) result |= stepping_id_bit_1;
+            if (leaf_0x01.eax_bit( 2u)) result |= stepping_id_bit_2;
+            if (leaf_0x01.eax_bit( 3u)) result |= stepping_id_bit_3;
+            if (leaf_0x01.eax_bit( 4u)) result |= model_bit_0;
+            if (leaf_0x01.eax_bit( 5u)) result |= model_bit_1;
+            if (leaf_0x01.eax_bit( 6u)) result |= model_bit_2;
+            if (leaf_0x01.eax_bit( 7u)) result |= model_bit_3;
+            if (leaf_0x01.eax_bit( 8u)) result |= family_id_bit_0;
+            if (leaf_0x01.eax_bit( 9u)) result |= family_id_bit_1;
+            if (leaf_0x01.eax_bit(10u)) result |= family_id_bit_2;
+            if (leaf_0x01.eax_bit(11u)) result |= family_id_bit_3;
+            if (leaf_0x01.eax_bit(12u)) result |= processor_type_bit_0;
+            if (leaf_0x01.eax_bit(13u)) result |= processor_type_bit_1;
+            if (leaf_0x01.eax_bit(16u)) result |= extended_model_id_bit_0;
+            if (leaf_0x01.eax_bit(17u)) result |= extended_model_id_bit_1;
+            if (leaf_0x01.eax_bit(18u)) result |= extended_model_id_bit_2;
+            if (leaf_0x01.eax_bit(19u)) result |= extended_model_id_bit_3;
+            if (leaf_0x01.eax_bit(20u)) result |= extended_family_id_bit_0;
+            if (leaf_0x01.eax_bit(21u)) result |= extended_family_id_bit_1;
+            if (leaf_0x01.eax_bit(22u)) result |= extended_family_id_bit_2;
+            if (leaf_0x01.eax_bit(23u)) result |= extended_family_id_bit_3;
+            if (leaf_0x01.eax_bit(24u)) result |= extended_family_id_bit_4;
+            if (leaf_0x01.eax_bit(25u)) result |= extended_family_id_bit_5;
+            if (leaf_0x01.eax_bit(26u)) result |= extended_family_id_bit_6;
+            if (leaf_0x01.eax_bit(27u)) result |= extended_family_id_bit_7;
         }
 
         return result;

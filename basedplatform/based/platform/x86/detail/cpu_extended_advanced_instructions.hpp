@@ -53,21 +53,21 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_advanced_instruction;
-            const auto leaf7 = cpu_id(0x07, 0x01);
+            const auto leaf_0x07 = cpu_id(0x07, 0x01);
 
             // edx register
-            if (leaf7.edx_bit( 4u)) result |= avx_vnni_int8;
-            if (leaf7.edx_bit( 5u)) result |= avx_ne_convert;
-            if (leaf7.edx_bit( 8u)) result |= amx_complex;
-            if (leaf7.edx_bit(10u)) result |= avx_vnni_int16;
-            if (leaf7.edx_bit(13u)) result |= utmr;
-            if (leaf7.edx_bit(14u)) result |= prefetchi;
-            if (leaf7.edx_bit(15u)) result |= user_msr;
-            if (leaf7.edx_bit(17u)) result |= uiret_uif_from_rflags;
-            if (leaf7.edx_bit(18u)) result |= cet_sss;
-            if (leaf7.edx_bit(19u)) result |= avx10;
-            if (leaf7.edx_bit(21u)) result |= apx_f;
-            if (leaf7.edx_bit(23u)) result |= mwait;
+            if (leaf_0x07.edx_bit( 4u)) result |= avx_vnni_int8;
+            if (leaf_0x07.edx_bit( 5u)) result |= avx_ne_convert;
+            if (leaf_0x07.edx_bit( 8u)) result |= amx_complex;
+            if (leaf_0x07.edx_bit(10u)) result |= avx_vnni_int16;
+            if (leaf_0x07.edx_bit(13u)) result |= utmr;
+            if (leaf_0x07.edx_bit(14u)) result |= prefetchi;
+            if (leaf_0x07.edx_bit(15u)) result |= user_msr;
+            if (leaf_0x07.edx_bit(17u)) result |= uiret_uif_from_rflags;
+            if (leaf_0x07.edx_bit(18u)) result |= cet_sss;
+            if (leaf_0x07.edx_bit(19u)) result |= avx10;
+            if (leaf_0x07.edx_bit(21u)) result |= apx_f;
+            if (leaf_0x07.edx_bit(23u)) result |= mwait;
         }
 
         return result;

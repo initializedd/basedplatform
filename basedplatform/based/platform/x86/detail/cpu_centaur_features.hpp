@@ -84,40 +84,40 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0xC0000001) {
             using enum cpu_centaur_feature;
-            const auto leaf8 = cpu_id(0xC0000001, 0x00);
+            const auto leaf_0xc0000001 = cpu_id(0xC0000001, 0x00);
 
             // edx register
-            if (leaf8.edx_bit( 0u)) result |= sm2;
-            if (leaf8.edx_bit( 1u)) result |= sm2_en;
-            if (leaf8.edx_bit( 2u)) result |= rng;
-            if (leaf8.edx_bit( 3u)) result |= rng_en;
-            if (leaf8.edx_bit( 4u)) result |= ccs;
-            if (leaf8.edx_bit( 5u)) result |= ccs_en;
-            if (leaf8.edx_bit( 6u)) result |= xcrypt;
-            if (leaf8.edx_bit( 7u)) result |= xcrypt_en;
-            if (leaf8.edx_bit( 8u)) result |= ace2;
-            if (leaf8.edx_bit( 9u)) result |= ace2_en;
-            if (leaf8.edx_bit(10u)) result |= phe;
-            if (leaf8.edx_bit(11u)) result |= phe_en;
-            if (leaf8.edx_bit(12u)) result |= pmm;
-            if (leaf8.edx_bit(13u)) result |= pmm_en;
-            if (leaf8.edx_bit(15u)) result |= zx_fma;
-            if (leaf8.edx_bit(16u)) result |= parallax;
-            if (leaf8.edx_bit(17u)) result |= parallax_en;
-            if (leaf8.edx_bit(18u)) result |= overstress;
-            if (leaf8.edx_bit(19u)) result |= overstress_en;
-            if (leaf8.edx_bit(20u)) result |= tm3;
-            if (leaf8.edx_bit(21u)) result |= tm3_en;
-            if (leaf8.edx_bit(22u)) result |= rng2;
-            if (leaf8.edx_bit(23u)) result |= rng2_en;
-            if (leaf8.edx_bit(24u)) result |= sem;
-            if (leaf8.edx_bit(25u)) result |= phe2;
-            if (leaf8.edx_bit(26u)) result |= phe2_en;
-            if (leaf8.edx_bit(27u)) result |= xmodx;
-            if (leaf8.edx_bit(28u)) result |= xmodx_en;
-            if (leaf8.edx_bit(29u)) result |= vex;
-            if (leaf8.edx_bit(30u)) result |= vex_en;
-            if (leaf8.edx_bit(31u)) result |= stk;
+            if (leaf_0xc0000001.edx_bit( 0u)) result |= sm2;
+            if (leaf_0xc0000001.edx_bit( 1u)) result |= sm2_en;
+            if (leaf_0xc0000001.edx_bit( 2u)) result |= rng;
+            if (leaf_0xc0000001.edx_bit( 3u)) result |= rng_en;
+            if (leaf_0xc0000001.edx_bit( 4u)) result |= ccs;
+            if (leaf_0xc0000001.edx_bit( 5u)) result |= ccs_en;
+            if (leaf_0xc0000001.edx_bit( 6u)) result |= xcrypt;
+            if (leaf_0xc0000001.edx_bit( 7u)) result |= xcrypt_en;
+            if (leaf_0xc0000001.edx_bit( 8u)) result |= ace2;
+            if (leaf_0xc0000001.edx_bit( 9u)) result |= ace2_en;
+            if (leaf_0xc0000001.edx_bit(10u)) result |= phe;
+            if (leaf_0xc0000001.edx_bit(11u)) result |= phe_en;
+            if (leaf_0xc0000001.edx_bit(12u)) result |= pmm;
+            if (leaf_0xc0000001.edx_bit(13u)) result |= pmm_en;
+            if (leaf_0xc0000001.edx_bit(15u)) result |= zx_fma;
+            if (leaf_0xc0000001.edx_bit(16u)) result |= parallax;
+            if (leaf_0xc0000001.edx_bit(17u)) result |= parallax_en;
+            if (leaf_0xc0000001.edx_bit(18u)) result |= overstress;
+            if (leaf_0xc0000001.edx_bit(19u)) result |= overstress_en;
+            if (leaf_0xc0000001.edx_bit(20u)) result |= tm3;
+            if (leaf_0xc0000001.edx_bit(21u)) result |= tm3_en;
+            if (leaf_0xc0000001.edx_bit(22u)) result |= rng2;
+            if (leaf_0xc0000001.edx_bit(23u)) result |= rng2_en;
+            if (leaf_0xc0000001.edx_bit(24u)) result |= sem;
+            if (leaf_0xc0000001.edx_bit(25u)) result |= phe2;
+            if (leaf_0xc0000001.edx_bit(26u)) result |= phe2_en;
+            if (leaf_0xc0000001.edx_bit(27u)) result |= xmodx;
+            if (leaf_0xc0000001.edx_bit(28u)) result |= xmodx_en;
+            if (leaf_0xc0000001.edx_bit(29u)) result |= vex;
+            if (leaf_0xc0000001.edx_bit(30u)) result |= vex_en;
+            if (leaf_0xc0000001.edx_bit(31u)) result |= stk;
         }
 
         return result;

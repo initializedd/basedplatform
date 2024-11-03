@@ -32,14 +32,14 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x0D) {
             using enum cpu_xsave_feature_flag;
-            const auto leaf13 = cpu_id(0x0D, 0x01);
+            const auto leaf_0x0d = cpu_id(0x0D, 0x01);
 
             // eax register
-            if (leaf13.eax_bit(0u)) result |= xsaveopt;
-            if (leaf13.eax_bit(1u)) result |= xsavec;
-            if (leaf13.eax_bit(2u)) result |= xgetbv_ecx1;
-            if (leaf13.eax_bit(3u)) result |= xss;
-            if (leaf13.eax_bit(4u)) result |= xfd;
+            if (leaf_0x0d.eax_bit(0u)) result |= xsaveopt;
+            if (leaf_0x0d.eax_bit(1u)) result |= xsavec;
+            if (leaf_0x0d.eax_bit(2u)) result |= xgetbv_ecx1;
+            if (leaf_0x0d.eax_bit(3u)) result |= xss;
+            if (leaf_0x0d.eax_bit(4u)) result |= xfd;
         }
 
         return result;

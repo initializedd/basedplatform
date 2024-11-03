@@ -85,41 +85,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_advanced_feature;
-            const auto leaf7 = cpu_id(0x07, 0x00);
+            const auto leaf_0x07 = cpu_id(0x07, 0x00);
 
             // ecx register
-            if (leaf7.ecx_bit( 0u)) result |= prefetchwt1;
-            if (leaf7.ecx_bit( 1u)) result |= avx512vbmi;
-            if (leaf7.ecx_bit( 2u)) result |= umip;
-            if (leaf7.ecx_bit( 3u)) result |= pku;
-            if (leaf7.ecx_bit( 4u)) result |= ospke;
-            if (leaf7.ecx_bit( 5u)) result |= waitpkg;
-            if (leaf7.ecx_bit( 6u)) result |= avx512vbmi2;
-            if (leaf7.ecx_bit( 7u)) result |= cetss;
-            if (leaf7.ecx_bit( 8u)) result |= gfni;
-            if (leaf7.ecx_bit( 9u)) result |= vaes;
-            if (leaf7.ecx_bit(10u)) result |= vpclmulqdq;
-            if (leaf7.ecx_bit(11u)) result |= avx512vnni;
-            if (leaf7.ecx_bit(12u)) result |= avx512bitalg;
-            if (leaf7.ecx_bit(13u)) result |= tmeen;
-            if (leaf7.ecx_bit(14u)) result |= avx512vpopcntdq;
-            if (leaf7.ecx_bit(15u)) result |= fzm;
-            if (leaf7.ecx_bit(16u)) result |= la57;
-            if (leaf7.ecx_bit(17u)) result |= mawau_bit_0;
-            if (leaf7.ecx_bit(18u)) result |= mawau_bit_1;
-            if (leaf7.ecx_bit(19u)) result |= mawau_bit_2;
-            if (leaf7.ecx_bit(20u)) result |= mawau_bit_3;
-            if (leaf7.ecx_bit(21u)) result |= mawau_bit_4;
-            if (leaf7.ecx_bit(22u)) result |= rdpid;
-            if (leaf7.ecx_bit(23u)) result |= kl;
-            if (leaf7.ecx_bit(24u)) result |= bus_lock_detect;
-            if (leaf7.ecx_bit(25u)) result |= cldemote;
-            if (leaf7.ecx_bit(26u)) result |= mprr;
-            if (leaf7.ecx_bit(27u)) result |= movdiri;
-            if (leaf7.ecx_bit(28u)) result |= movdir64b;
-            if (leaf7.ecx_bit(29u)) result |= enqcmd;
-            if (leaf7.ecx_bit(30u)) result |= sgxlc;
-            if (leaf7.ecx_bit(31u)) result |= pks;
+            if (leaf_0x07.ecx_bit( 0u)) result |= prefetchwt1;
+            if (leaf_0x07.ecx_bit( 1u)) result |= avx512vbmi;
+            if (leaf_0x07.ecx_bit( 2u)) result |= umip;
+            if (leaf_0x07.ecx_bit( 3u)) result |= pku;
+            if (leaf_0x07.ecx_bit( 4u)) result |= ospke;
+            if (leaf_0x07.ecx_bit( 5u)) result |= waitpkg;
+            if (leaf_0x07.ecx_bit( 6u)) result |= avx512vbmi2;
+            if (leaf_0x07.ecx_bit( 7u)) result |= cetss;
+            if (leaf_0x07.ecx_bit( 8u)) result |= gfni;
+            if (leaf_0x07.ecx_bit( 9u)) result |= vaes;
+            if (leaf_0x07.ecx_bit(10u)) result |= vpclmulqdq;
+            if (leaf_0x07.ecx_bit(11u)) result |= avx512vnni;
+            if (leaf_0x07.ecx_bit(12u)) result |= avx512bitalg;
+            if (leaf_0x07.ecx_bit(13u)) result |= tmeen;
+            if (leaf_0x07.ecx_bit(14u)) result |= avx512vpopcntdq;
+            if (leaf_0x07.ecx_bit(15u)) result |= fzm;
+            if (leaf_0x07.ecx_bit(16u)) result |= la57;
+            if (leaf_0x07.ecx_bit(17u)) result |= mawau_bit_0;
+            if (leaf_0x07.ecx_bit(18u)) result |= mawau_bit_1;
+            if (leaf_0x07.ecx_bit(19u)) result |= mawau_bit_2;
+            if (leaf_0x07.ecx_bit(20u)) result |= mawau_bit_3;
+            if (leaf_0x07.ecx_bit(21u)) result |= mawau_bit_4;
+            if (leaf_0x07.ecx_bit(22u)) result |= rdpid;
+            if (leaf_0x07.ecx_bit(23u)) result |= kl;
+            if (leaf_0x07.ecx_bit(24u)) result |= bus_lock_detect;
+            if (leaf_0x07.ecx_bit(25u)) result |= cldemote;
+            if (leaf_0x07.ecx_bit(26u)) result |= mprr;
+            if (leaf_0x07.ecx_bit(27u)) result |= movdiri;
+            if (leaf_0x07.ecx_bit(28u)) result |= movdir64b;
+            if (leaf_0x07.ecx_bit(29u)) result |= enqcmd;
+            if (leaf_0x07.ecx_bit(30u)) result |= sgxlc;
+            if (leaf_0x07.ecx_bit(31u)) result |= pks;
         }
 
         return result;

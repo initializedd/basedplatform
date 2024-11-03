@@ -85,41 +85,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000007) {
             using enum cpu_feedback_feature;
-            const auto leaf8 = cpu_id(0x80000007, 0x00);
+            const auto leaf_0x80000007 = cpu_id(0x80000007, 0x00);
 
             // eax register
-            if (leaf8.eax_bit( 0u)) result |= num_of_monitors_bit_0;
-            if (leaf8.eax_bit( 1u)) result |= num_of_monitors_bit_1;
-            if (leaf8.eax_bit( 2u)) result |= num_of_monitors_bit_2;
-            if (leaf8.eax_bit( 3u)) result |= num_of_monitors_bit_3;
-            if (leaf8.eax_bit( 4u)) result |= num_of_monitors_bit_4;
-            if (leaf8.eax_bit( 5u)) result |= num_of_monitors_bit_5;
-            if (leaf8.eax_bit( 6u)) result |= num_of_monitors_bit_6;
-            if (leaf8.eax_bit( 7u)) result |= num_of_monitors_bit_7;
-            if (leaf8.eax_bit( 8u)) result |= version_bit_0;
-            if (leaf8.eax_bit( 9u)) result |= version_bit_1;
-            if (leaf8.eax_bit(10u)) result |= version_bit_2;
-            if (leaf8.eax_bit(11u)) result |= version_bit_3;
-            if (leaf8.eax_bit(12u)) result |= version_bit_4;
-            if (leaf8.eax_bit(13u)) result |= version_bit_5;
-            if (leaf8.eax_bit(14u)) result |= version_bit_6;
-            if (leaf8.eax_bit(15u)) result |= version_bit_7;
-            if (leaf8.eax_bit(16u)) result |= max_wrap_time_bit_0;
-            if (leaf8.eax_bit(17u)) result |= max_wrap_time_bit_1;
-            if (leaf8.eax_bit(18u)) result |= max_wrap_time_bit_2;
-            if (leaf8.eax_bit(19u)) result |= max_wrap_time_bit_3;
-            if (leaf8.eax_bit(20u)) result |= max_wrap_time_bit_4;
-            if (leaf8.eax_bit(21u)) result |= max_wrap_time_bit_5;
-            if (leaf8.eax_bit(22u)) result |= max_wrap_time_bit_6;
-            if (leaf8.eax_bit(23u)) result |= max_wrap_time_bit_7;
-            if (leaf8.eax_bit(24u)) result |= max_wrap_time_bit_8;
-            if (leaf8.eax_bit(25u)) result |= max_wrap_time_bit_9;
-            if (leaf8.eax_bit(26u)) result |= max_wrap_time_bit_10;
-            if (leaf8.eax_bit(27u)) result |= max_wrap_time_bit_11;
-            if (leaf8.eax_bit(28u)) result |= max_wrap_time_bit_12;
-            if (leaf8.eax_bit(29u)) result |= max_wrap_time_bit_13;
-            if (leaf8.eax_bit(30u)) result |= max_wrap_time_bit_14;
-            if (leaf8.eax_bit(31u)) result |= max_wrap_time_bit_15;
+            if (leaf_0x80000007.eax_bit( 0u)) result |= num_of_monitors_bit_0;
+            if (leaf_0x80000007.eax_bit( 1u)) result |= num_of_monitors_bit_1;
+            if (leaf_0x80000007.eax_bit( 2u)) result |= num_of_monitors_bit_2;
+            if (leaf_0x80000007.eax_bit( 3u)) result |= num_of_monitors_bit_3;
+            if (leaf_0x80000007.eax_bit( 4u)) result |= num_of_monitors_bit_4;
+            if (leaf_0x80000007.eax_bit( 5u)) result |= num_of_monitors_bit_5;
+            if (leaf_0x80000007.eax_bit( 6u)) result |= num_of_monitors_bit_6;
+            if (leaf_0x80000007.eax_bit( 7u)) result |= num_of_monitors_bit_7;
+            if (leaf_0x80000007.eax_bit( 8u)) result |= version_bit_0;
+            if (leaf_0x80000007.eax_bit( 9u)) result |= version_bit_1;
+            if (leaf_0x80000007.eax_bit(10u)) result |= version_bit_2;
+            if (leaf_0x80000007.eax_bit(11u)) result |= version_bit_3;
+            if (leaf_0x80000007.eax_bit(12u)) result |= version_bit_4;
+            if (leaf_0x80000007.eax_bit(13u)) result |= version_bit_5;
+            if (leaf_0x80000007.eax_bit(14u)) result |= version_bit_6;
+            if (leaf_0x80000007.eax_bit(15u)) result |= version_bit_7;
+            if (leaf_0x80000007.eax_bit(16u)) result |= max_wrap_time_bit_0;
+            if (leaf_0x80000007.eax_bit(17u)) result |= max_wrap_time_bit_1;
+            if (leaf_0x80000007.eax_bit(18u)) result |= max_wrap_time_bit_2;
+            if (leaf_0x80000007.eax_bit(19u)) result |= max_wrap_time_bit_3;
+            if (leaf_0x80000007.eax_bit(20u)) result |= max_wrap_time_bit_4;
+            if (leaf_0x80000007.eax_bit(21u)) result |= max_wrap_time_bit_5;
+            if (leaf_0x80000007.eax_bit(22u)) result |= max_wrap_time_bit_6;
+            if (leaf_0x80000007.eax_bit(23u)) result |= max_wrap_time_bit_7;
+            if (leaf_0x80000007.eax_bit(24u)) result |= max_wrap_time_bit_8;
+            if (leaf_0x80000007.eax_bit(25u)) result |= max_wrap_time_bit_9;
+            if (leaf_0x80000007.eax_bit(26u)) result |= max_wrap_time_bit_10;
+            if (leaf_0x80000007.eax_bit(27u)) result |= max_wrap_time_bit_11;
+            if (leaf_0x80000007.eax_bit(28u)) result |= max_wrap_time_bit_12;
+            if (leaf_0x80000007.eax_bit(29u)) result |= max_wrap_time_bit_13;
+            if (leaf_0x80000007.eax_bit(30u)) result |= max_wrap_time_bit_14;
+            if (leaf_0x80000007.eax_bit(31u)) result |= max_wrap_time_bit_15;
         }
 
         return result;

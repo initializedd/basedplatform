@@ -15,7 +15,7 @@ namespace based::platform::x86::detail {
         snglrngout,
         output_trace_transport,
         // bits 30:4 reserved
-        instruction_pointer_format
+        instruction_pointer_format = 31u
     }; // enum class processor_trace_extended_feature : std::uint8_t
 
     enum class processor_trace_extended_feature_mask : std::uint32_t {
@@ -32,14 +32,14 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x14) {
             using enum processor_trace_extended_feature;
-            const auto leaf14 = cpu_id(0x14, 0x00);
+            const auto leaf_0x14 = cpu_id(0x14, 0x00);
 
             // ecx register
-            if (leaf14.ecx_bit( 0u)) result |= topaout;
-            if (leaf14.ecx_bit( 1u)) result |= mentry;
-            if (leaf14.ecx_bit( 2u)) result |= snglrngout;
-            if (leaf14.ecx_bit( 3u)) result |= output_trace_transport;
-            if (leaf14.ecx_bit(31u)) result |= instruction_pointer_format;
+            if (leaf_0x14.ecx_bit( 0u)) result |= topaout;
+            if (leaf_0x14.ecx_bit( 1u)) result |= mentry;
+            if (leaf_0x14.ecx_bit( 2u)) result |= snglrngout;
+            if (leaf_0x14.ecx_bit( 3u)) result |= output_trace_transport;
+            if (leaf_0x14.ecx_bit(31u)) result |= instruction_pointer_format;
         }
 
         return result;

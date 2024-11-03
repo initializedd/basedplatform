@@ -85,41 +85,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x0D) {
             using enum cpu_state_component_size;
-            const auto leaf13 = cpu_id(0x0D, 0x02);
+            const auto leaf_0x0d = cpu_id(0x0D, 0x02);
 
             // eax register
-            if (leaf13.eax_bit( 0u)) result |= size_bit_0;
-            if (leaf13.eax_bit( 1u)) result |= size_bit_1;
-            if (leaf13.eax_bit( 2u)) result |= size_bit_2;
-            if (leaf13.eax_bit( 3u)) result |= size_bit_3;
-            if (leaf13.eax_bit( 4u)) result |= size_bit_4;
-            if (leaf13.eax_bit( 5u)) result |= size_bit_5;
-            if (leaf13.eax_bit( 6u)) result |= size_bit_6;
-            if (leaf13.eax_bit( 7u)) result |= size_bit_7;
-            if (leaf13.eax_bit( 8u)) result |= size_bit_8;
-            if (leaf13.eax_bit( 9u)) result |= size_bit_9;
-            if (leaf13.eax_bit(10u)) result |= size_bit_10;
-            if (leaf13.eax_bit(11u)) result |= size_bit_11;
-            if (leaf13.eax_bit(12u)) result |= size_bit_12;
-            if (leaf13.eax_bit(13u)) result |= size_bit_13;
-            if (leaf13.eax_bit(14u)) result |= size_bit_14;
-            if (leaf13.eax_bit(15u)) result |= size_bit_15;
-            if (leaf13.eax_bit(16u)) result |= size_bit_16;
-            if (leaf13.eax_bit(17u)) result |= size_bit_17;
-            if (leaf13.eax_bit(18u)) result |= size_bit_18;
-            if (leaf13.eax_bit(19u)) result |= size_bit_19;
-            if (leaf13.eax_bit(20u)) result |= size_bit_20;
-            if (leaf13.eax_bit(21u)) result |= size_bit_21;
-            if (leaf13.eax_bit(22u)) result |= size_bit_22;
-            if (leaf13.eax_bit(23u)) result |= size_bit_23;
-            if (leaf13.eax_bit(24u)) result |= size_bit_24;
-            if (leaf13.eax_bit(25u)) result |= size_bit_25;
-            if (leaf13.eax_bit(26u)) result |= size_bit_26;
-            if (leaf13.eax_bit(27u)) result |= size_bit_27;
-            if (leaf13.eax_bit(28u)) result |= size_bit_28;
-            if (leaf13.eax_bit(29u)) result |= size_bit_29;
-            if (leaf13.eax_bit(30u)) result |= size_bit_30;
-            if (leaf13.eax_bit(31u)) result |= size_bit_31;
+            if (leaf_0x0d.eax_bit( 0u)) result |= size_bit_0;
+            if (leaf_0x0d.eax_bit( 1u)) result |= size_bit_1;
+            if (leaf_0x0d.eax_bit( 2u)) result |= size_bit_2;
+            if (leaf_0x0d.eax_bit( 3u)) result |= size_bit_3;
+            if (leaf_0x0d.eax_bit( 4u)) result |= size_bit_4;
+            if (leaf_0x0d.eax_bit( 5u)) result |= size_bit_5;
+            if (leaf_0x0d.eax_bit( 6u)) result |= size_bit_6;
+            if (leaf_0x0d.eax_bit( 7u)) result |= size_bit_7;
+            if (leaf_0x0d.eax_bit( 8u)) result |= size_bit_8;
+            if (leaf_0x0d.eax_bit( 9u)) result |= size_bit_9;
+            if (leaf_0x0d.eax_bit(10u)) result |= size_bit_10;
+            if (leaf_0x0d.eax_bit(11u)) result |= size_bit_11;
+            if (leaf_0x0d.eax_bit(12u)) result |= size_bit_12;
+            if (leaf_0x0d.eax_bit(13u)) result |= size_bit_13;
+            if (leaf_0x0d.eax_bit(14u)) result |= size_bit_14;
+            if (leaf_0x0d.eax_bit(15u)) result |= size_bit_15;
+            if (leaf_0x0d.eax_bit(16u)) result |= size_bit_16;
+            if (leaf_0x0d.eax_bit(17u)) result |= size_bit_17;
+            if (leaf_0x0d.eax_bit(18u)) result |= size_bit_18;
+            if (leaf_0x0d.eax_bit(19u)) result |= size_bit_19;
+            if (leaf_0x0d.eax_bit(20u)) result |= size_bit_20;
+            if (leaf_0x0d.eax_bit(21u)) result |= size_bit_21;
+            if (leaf_0x0d.eax_bit(22u)) result |= size_bit_22;
+            if (leaf_0x0d.eax_bit(23u)) result |= size_bit_23;
+            if (leaf_0x0d.eax_bit(24u)) result |= size_bit_24;
+            if (leaf_0x0d.eax_bit(25u)) result |= size_bit_25;
+            if (leaf_0x0d.eax_bit(26u)) result |= size_bit_26;
+            if (leaf_0x0d.eax_bit(27u)) result |= size_bit_27;
+            if (leaf_0x0d.eax_bit(28u)) result |= size_bit_28;
+            if (leaf_0x0d.eax_bit(29u)) result |= size_bit_29;
+            if (leaf_0x0d.eax_bit(30u)) result |= size_bit_30;
+            if (leaf_0x0d.eax_bit(31u)) result |= size_bit_31;
         }
 
         return result;
@@ -201,41 +201,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x0D) {
             using enum cpu_state_component_offset;
-            const auto leaf13 = cpu_id(0x0D, 0x02);
+            const auto leaf_0x0d = cpu_id(0x0D, 0x02);
 
             // ebx register
-            if (leaf13.ebx_bit( 0u)) result |= offset_bit_0;
-            if (leaf13.ebx_bit( 1u)) result |= offset_bit_1;
-            if (leaf13.ebx_bit( 2u)) result |= offset_bit_2;
-            if (leaf13.ebx_bit( 3u)) result |= offset_bit_3;
-            if (leaf13.ebx_bit( 4u)) result |= offset_bit_4;
-            if (leaf13.ebx_bit( 5u)) result |= offset_bit_5;
-            if (leaf13.ebx_bit( 6u)) result |= offset_bit_6;
-            if (leaf13.ebx_bit( 7u)) result |= offset_bit_7;
-            if (leaf13.ebx_bit( 8u)) result |= offset_bit_8;
-            if (leaf13.ebx_bit( 9u)) result |= offset_bit_9;
-            if (leaf13.ebx_bit(10u)) result |= offset_bit_10;
-            if (leaf13.ebx_bit(11u)) result |= offset_bit_11;
-            if (leaf13.ebx_bit(12u)) result |= offset_bit_12;
-            if (leaf13.ebx_bit(13u)) result |= offset_bit_13;
-            if (leaf13.ebx_bit(14u)) result |= offset_bit_14;
-            if (leaf13.ebx_bit(15u)) result |= offset_bit_15;
-            if (leaf13.ebx_bit(16u)) result |= offset_bit_16;
-            if (leaf13.ebx_bit(17u)) result |= offset_bit_17;
-            if (leaf13.ebx_bit(18u)) result |= offset_bit_18;
-            if (leaf13.ebx_bit(19u)) result |= offset_bit_19;
-            if (leaf13.ebx_bit(20u)) result |= offset_bit_20;
-            if (leaf13.ebx_bit(21u)) result |= offset_bit_21;
-            if (leaf13.ebx_bit(22u)) result |= offset_bit_22;
-            if (leaf13.ebx_bit(23u)) result |= offset_bit_23;
-            if (leaf13.ebx_bit(24u)) result |= offset_bit_24;
-            if (leaf13.ebx_bit(25u)) result |= offset_bit_25;
-            if (leaf13.ebx_bit(26u)) result |= offset_bit_26;
-            if (leaf13.ebx_bit(27u)) result |= offset_bit_27;
-            if (leaf13.ebx_bit(28u)) result |= offset_bit_28;
-            if (leaf13.ebx_bit(29u)) result |= offset_bit_29;
-            if (leaf13.ebx_bit(30u)) result |= offset_bit_30;
-            if (leaf13.ebx_bit(31u)) result |= offset_bit_31;
+            if (leaf_0x0d.ebx_bit( 0u)) result |= offset_bit_0;
+            if (leaf_0x0d.ebx_bit( 1u)) result |= offset_bit_1;
+            if (leaf_0x0d.ebx_bit( 2u)) result |= offset_bit_2;
+            if (leaf_0x0d.ebx_bit( 3u)) result |= offset_bit_3;
+            if (leaf_0x0d.ebx_bit( 4u)) result |= offset_bit_4;
+            if (leaf_0x0d.ebx_bit( 5u)) result |= offset_bit_5;
+            if (leaf_0x0d.ebx_bit( 6u)) result |= offset_bit_6;
+            if (leaf_0x0d.ebx_bit( 7u)) result |= offset_bit_7;
+            if (leaf_0x0d.ebx_bit( 8u)) result |= offset_bit_8;
+            if (leaf_0x0d.ebx_bit( 9u)) result |= offset_bit_9;
+            if (leaf_0x0d.ebx_bit(10u)) result |= offset_bit_10;
+            if (leaf_0x0d.ebx_bit(11u)) result |= offset_bit_11;
+            if (leaf_0x0d.ebx_bit(12u)) result |= offset_bit_12;
+            if (leaf_0x0d.ebx_bit(13u)) result |= offset_bit_13;
+            if (leaf_0x0d.ebx_bit(14u)) result |= offset_bit_14;
+            if (leaf_0x0d.ebx_bit(15u)) result |= offset_bit_15;
+            if (leaf_0x0d.ebx_bit(16u)) result |= offset_bit_16;
+            if (leaf_0x0d.ebx_bit(17u)) result |= offset_bit_17;
+            if (leaf_0x0d.ebx_bit(18u)) result |= offset_bit_18;
+            if (leaf_0x0d.ebx_bit(19u)) result |= offset_bit_19;
+            if (leaf_0x0d.ebx_bit(20u)) result |= offset_bit_20;
+            if (leaf_0x0d.ebx_bit(21u)) result |= offset_bit_21;
+            if (leaf_0x0d.ebx_bit(22u)) result |= offset_bit_22;
+            if (leaf_0x0d.ebx_bit(23u)) result |= offset_bit_23;
+            if (leaf_0x0d.ebx_bit(24u)) result |= offset_bit_24;
+            if (leaf_0x0d.ebx_bit(25u)) result |= offset_bit_25;
+            if (leaf_0x0d.ebx_bit(26u)) result |= offset_bit_26;
+            if (leaf_0x0d.ebx_bit(27u)) result |= offset_bit_27;
+            if (leaf_0x0d.ebx_bit(28u)) result |= offset_bit_28;
+            if (leaf_0x0d.ebx_bit(29u)) result |= offset_bit_29;
+            if (leaf_0x0d.ebx_bit(30u)) result |= offset_bit_30;
+            if (leaf_0x0d.ebx_bit(31u)) result |= offset_bit_31;
         }
 
         return result;
@@ -258,11 +258,11 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x0D) {
             using enum cpu_state_component_meta;
-            const auto leaf13 = cpu_id(0x0D, 0x02);
+            const auto leaf_0x0d = cpu_id(0x0D, 0x02);
 
             // ecx register
-            if (leaf13.ecx_bit(0u)) result |= user_supervisor;
-            if (leaf13.ecx_bit(1u)) result |= alignment_64_bytes;
+            if (leaf_0x0d.ecx_bit(0u)) result |= user_supervisor;
+            if (leaf_0x0d.ecx_bit(1u)) result |= alignment_64_bytes;
         }
 
         return result;

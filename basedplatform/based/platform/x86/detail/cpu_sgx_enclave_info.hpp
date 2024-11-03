@@ -54,25 +54,25 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x12) {
             using enum cpu_sgx_enclave_info;
-            const auto leaf12 = cpu_id(0x12, 0x00);
+            const auto leaf_0x12 = cpu_id(0x12, 0x00);
 
             // edx register
-            if (leaf12.edx_bit( 0u)) result |= max_enclave_size_not_64_bit_0;
-            if (leaf12.edx_bit( 1u)) result |= max_enclave_size_not_64_bit_1;
-            if (leaf12.edx_bit( 2u)) result |= max_enclave_size_not_64_bit_2;
-            if (leaf12.edx_bit( 3u)) result |= max_enclave_size_not_64_bit_3;
-            if (leaf12.edx_bit( 4u)) result |= max_enclave_size_not_64_bit_4;
-            if (leaf12.edx_bit( 5u)) result |= max_enclave_size_not_64_bit_5;
-            if (leaf12.edx_bit( 6u)) result |= max_enclave_size_not_64_bit_6;
-            if (leaf12.edx_bit( 7u)) result |= max_enclave_size_not_64_bit_7;
-            if (leaf12.edx_bit( 8u)) result |= max_enclave_size_64_bit_0;
-            if (leaf12.edx_bit( 9u)) result |= max_enclave_size_64_bit_1;
-            if (leaf12.edx_bit(10u)) result |= max_enclave_size_64_bit_2;
-            if (leaf12.edx_bit(11u)) result |= max_enclave_size_64_bit_3;
-            if (leaf12.edx_bit(12u)) result |= max_enclave_size_64_bit_4;
-            if (leaf12.edx_bit(13u)) result |= max_enclave_size_64_bit_5;
-            if (leaf12.edx_bit(14u)) result |= max_enclave_size_64_bit_6;
-            if (leaf12.edx_bit(15u)) result |= max_enclave_size_64_bit_7;
+            if (leaf_0x12.edx_bit( 0u)) result |= max_enclave_size_not_64_bit_0;
+            if (leaf_0x12.edx_bit( 1u)) result |= max_enclave_size_not_64_bit_1;
+            if (leaf_0x12.edx_bit( 2u)) result |= max_enclave_size_not_64_bit_2;
+            if (leaf_0x12.edx_bit( 3u)) result |= max_enclave_size_not_64_bit_3;
+            if (leaf_0x12.edx_bit( 4u)) result |= max_enclave_size_not_64_bit_4;
+            if (leaf_0x12.edx_bit( 5u)) result |= max_enclave_size_not_64_bit_5;
+            if (leaf_0x12.edx_bit( 6u)) result |= max_enclave_size_not_64_bit_6;
+            if (leaf_0x12.edx_bit( 7u)) result |= max_enclave_size_not_64_bit_7;
+            if (leaf_0x12.edx_bit( 8u)) result |= max_enclave_size_64_bit_0;
+            if (leaf_0x12.edx_bit( 9u)) result |= max_enclave_size_64_bit_1;
+            if (leaf_0x12.edx_bit(10u)) result |= max_enclave_size_64_bit_2;
+            if (leaf_0x12.edx_bit(11u)) result |= max_enclave_size_64_bit_3;
+            if (leaf_0x12.edx_bit(12u)) result |= max_enclave_size_64_bit_4;
+            if (leaf_0x12.edx_bit(13u)) result |= max_enclave_size_64_bit_5;
+            if (leaf_0x12.edx_bit(14u)) result |= max_enclave_size_64_bit_6;
+            if (leaf_0x12.edx_bit(15u)) result |= max_enclave_size_64_bit_7;
         }
 
         return result;

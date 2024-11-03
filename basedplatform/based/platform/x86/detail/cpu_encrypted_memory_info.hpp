@@ -54,25 +54,25 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x8000001F) {
             using enum cpu_encrypted_memory_info;
-            const auto leaf8 = cpu_id(0x8000001F, 0x00);
+            const auto leaf_0x8000001f = cpu_id(0x8000001F, 0x00);
 
             // ebx register
-            if (leaf8.ebx_bit( 0u)) result |= c_bit_location_bit_0;
-            if (leaf8.ebx_bit( 1u)) result |= c_bit_location_bit_1;
-            if (leaf8.ebx_bit( 2u)) result |= c_bit_location_bit_2;
-            if (leaf8.ebx_bit( 3u)) result |= c_bit_location_bit_3;
-            if (leaf8.ebx_bit( 4u)) result |= c_bit_location_bit_4;
-            if (leaf8.ebx_bit( 5u)) result |= c_bit_location_bit_5;
-            if (leaf8.ebx_bit( 6u)) result |= physical_address_width_reduction_bit_0;
-            if (leaf8.ebx_bit( 7u)) result |= physical_address_width_reduction_bit_1;
-            if (leaf8.ebx_bit( 8u)) result |= physical_address_width_reduction_bit_2;
-            if (leaf8.ebx_bit( 9u)) result |= physical_address_width_reduction_bit_3;
-            if (leaf8.ebx_bit(10u)) result |= physical_address_width_reduction_bit_4;
-            if (leaf8.ebx_bit(11u)) result |= physical_address_width_reduction_bit_5;
-            if (leaf8.ebx_bit(12u)) result |= num_of_vmpls_bit_0;
-            if (leaf8.ebx_bit(13u)) result |= num_of_vmpls_bit_1;
-            if (leaf8.ebx_bit(14u)) result |= num_of_vmpls_bit_2;
-            if (leaf8.ebx_bit(15u)) result |= num_of_vmpls_bit_3;
+            if (leaf_0x8000001f.ebx_bit( 0u)) result |= c_bit_location_bit_0;
+            if (leaf_0x8000001f.ebx_bit( 1u)) result |= c_bit_location_bit_1;
+            if (leaf_0x8000001f.ebx_bit( 2u)) result |= c_bit_location_bit_2;
+            if (leaf_0x8000001f.ebx_bit( 3u)) result |= c_bit_location_bit_3;
+            if (leaf_0x8000001f.ebx_bit( 4u)) result |= c_bit_location_bit_4;
+            if (leaf_0x8000001f.ebx_bit( 5u)) result |= c_bit_location_bit_5;
+            if (leaf_0x8000001f.ebx_bit( 6u)) result |= physical_address_width_reduction_bit_0;
+            if (leaf_0x8000001f.ebx_bit( 7u)) result |= physical_address_width_reduction_bit_1;
+            if (leaf_0x8000001f.ebx_bit( 8u)) result |= physical_address_width_reduction_bit_2;
+            if (leaf_0x8000001f.ebx_bit( 9u)) result |= physical_address_width_reduction_bit_3;
+            if (leaf_0x8000001f.ebx_bit(10u)) result |= physical_address_width_reduction_bit_4;
+            if (leaf_0x8000001f.ebx_bit(11u)) result |= physical_address_width_reduction_bit_5;
+            if (leaf_0x8000001f.ebx_bit(12u)) result |= num_of_vmpls_bit_0;
+            if (leaf_0x8000001f.ebx_bit(13u)) result |= num_of_vmpls_bit_1;
+            if (leaf_0x8000001f.ebx_bit(14u)) result |= num_of_vmpls_bit_2;
+            if (leaf_0x8000001f.ebx_bit(15u)) result |= num_of_vmpls_bit_3;
         }
 
         return result;

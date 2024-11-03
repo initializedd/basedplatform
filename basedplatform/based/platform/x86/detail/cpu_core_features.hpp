@@ -84,40 +84,40 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x01) {
             using enum cpu_core_feature;
-            const auto leaf1 = cpu_id(0x01, 0x00);
+            const auto leaf_0x01 = cpu_id(0x01, 0x00);
 
             // edx register
-            if (leaf1.edx_bit( 0u)) result |= fpu;
-            if (leaf1.edx_bit( 1u)) result |= vme;
-            if (leaf1.edx_bit( 2u)) result |= de;
-            if (leaf1.edx_bit( 3u)) result |= pse;
-            if (leaf1.edx_bit( 4u)) result |= tsc;
-            if (leaf1.edx_bit( 5u)) result |= msr;
-            if (leaf1.edx_bit( 6u)) result |= pae;
-            if (leaf1.edx_bit( 7u)) result |= mce;
-            if (leaf1.edx_bit( 8u)) result |= cx8;
-            if (leaf1.edx_bit( 9u)) result |= apic;
-            if (leaf1.edx_bit(11u)) result |= sep;
-            if (leaf1.edx_bit(12u)) result |= mtrr;
-            if (leaf1.edx_bit(13u)) result |= pge;
-            if (leaf1.edx_bit(14u)) result |= mca;
-            if (leaf1.edx_bit(15u)) result |= cmov;
-            if (leaf1.edx_bit(16u)) result |= pat;
-            if (leaf1.edx_bit(17u)) result |= pse_36;
-            if (leaf1.edx_bit(18u)) result |= psn;
-            if (leaf1.edx_bit(19u)) result |= clfsh;
-            if (leaf1.edx_bit(20u)) result |= nx;
-            if (leaf1.edx_bit(21u)) result |= ds;
-            if (leaf1.edx_bit(22u)) result |= acpi;
-            if (leaf1.edx_bit(23u)) result |= mmx;
-            if (leaf1.edx_bit(24u)) result |= fxsr;
-            if (leaf1.edx_bit(25u)) result |= sse;
-            if (leaf1.edx_bit(26u)) result |= sse2;
-            if (leaf1.edx_bit(27u)) result |= ss;
-            if (leaf1.edx_bit(28u)) result |= htt;
-            if (leaf1.edx_bit(29u)) result |= tm;
-            if (leaf1.edx_bit(30u)) result |= ia64;
-            if (leaf1.edx_bit(31u)) result |= pbe;
+            if (leaf_0x01.edx_bit( 0u)) result |= fpu;
+            if (leaf_0x01.edx_bit( 1u)) result |= vme;
+            if (leaf_0x01.edx_bit( 2u)) result |= de;
+            if (leaf_0x01.edx_bit( 3u)) result |= pse;
+            if (leaf_0x01.edx_bit( 4u)) result |= tsc;
+            if (leaf_0x01.edx_bit( 5u)) result |= msr;
+            if (leaf_0x01.edx_bit( 6u)) result |= pae;
+            if (leaf_0x01.edx_bit( 7u)) result |= mce;
+            if (leaf_0x01.edx_bit( 8u)) result |= cx8;
+            if (leaf_0x01.edx_bit( 9u)) result |= apic;
+            if (leaf_0x01.edx_bit(11u)) result |= sep;
+            if (leaf_0x01.edx_bit(12u)) result |= mtrr;
+            if (leaf_0x01.edx_bit(13u)) result |= pge;
+            if (leaf_0x01.edx_bit(14u)) result |= mca;
+            if (leaf_0x01.edx_bit(15u)) result |= cmov;
+            if (leaf_0x01.edx_bit(16u)) result |= pat;
+            if (leaf_0x01.edx_bit(17u)) result |= pse_36;
+            if (leaf_0x01.edx_bit(18u)) result |= psn;
+            if (leaf_0x01.edx_bit(19u)) result |= clfsh;
+            if (leaf_0x01.edx_bit(20u)) result |= nx;
+            if (leaf_0x01.edx_bit(21u)) result |= ds;
+            if (leaf_0x01.edx_bit(22u)) result |= acpi;
+            if (leaf_0x01.edx_bit(23u)) result |= mmx;
+            if (leaf_0x01.edx_bit(24u)) result |= fxsr;
+            if (leaf_0x01.edx_bit(25u)) result |= sse;
+            if (leaf_0x01.edx_bit(26u)) result |= sse2;
+            if (leaf_0x01.edx_bit(27u)) result |= ss;
+            if (leaf_0x01.edx_bit(28u)) result |= htt;
+            if (leaf_0x01.edx_bit(29u)) result |= tm;
+            if (leaf_0x01.edx_bit(30u)) result |= ia64;
+            if (leaf_0x01.edx_bit(31u)) result |= pbe;
         }
 
         return result;

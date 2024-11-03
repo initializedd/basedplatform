@@ -46,20 +46,20 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x06) {
             using enum cpu_thermal_meta;
-            const auto leaf6 = cpu_id(0x06, 0x00);
+            const auto leaf_0x06 = cpu_id(0x06, 0x00);
 
             // ecx register
-            if (leaf6.ecx_bit( 0u)) result |= effective_frequency_interface;
-            if (leaf6.ecx_bit( 1u)) result |= acnt2;
-            if (leaf6.ecx_bit( 3u)) result |= performance_energy_bias;
-            if (leaf6.ecx_bit( 8u)) result |= num_of_thread_director_classes_bit_0;
-            if (leaf6.ecx_bit( 9u)) result |= num_of_thread_director_classes_bit_1;
-            if (leaf6.ecx_bit(10u)) result |= num_of_thread_director_classes_bit_2;
-            if (leaf6.ecx_bit(11u)) result |= num_of_thread_director_classes_bit_3;
-            if (leaf6.ecx_bit(12u)) result |= num_of_thread_director_classes_bit_4;
-            if (leaf6.ecx_bit(13u)) result |= num_of_thread_director_classes_bit_5;
-            if (leaf6.ecx_bit(14u)) result |= num_of_thread_director_classes_bit_6;
-            if (leaf6.ecx_bit(15u)) result |= num_of_thread_director_classes_bit_7;
+            if (leaf_0x06.ecx_bit( 0u)) result |= effective_frequency_interface;
+            if (leaf_0x06.ecx_bit( 1u)) result |= acnt2;
+            if (leaf_0x06.ecx_bit( 3u)) result |= performance_energy_bias;
+            if (leaf_0x06.ecx_bit( 8u)) result |= num_of_thread_director_classes_bit_0;
+            if (leaf_0x06.ecx_bit( 9u)) result |= num_of_thread_director_classes_bit_1;
+            if (leaf_0x06.ecx_bit(10u)) result |= num_of_thread_director_classes_bit_2;
+            if (leaf_0x06.ecx_bit(11u)) result |= num_of_thread_director_classes_bit_3;
+            if (leaf_0x06.ecx_bit(12u)) result |= num_of_thread_director_classes_bit_4;
+            if (leaf_0x06.ecx_bit(13u)) result |= num_of_thread_director_classes_bit_5;
+            if (leaf_0x06.ecx_bit(14u)) result |= num_of_thread_director_classes_bit_6;
+            if (leaf_0x06.ecx_bit(15u)) result |= num_of_thread_director_classes_bit_7;
         }
 
         return result;

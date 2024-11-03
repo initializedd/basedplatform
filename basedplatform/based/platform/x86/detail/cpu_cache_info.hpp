@@ -82,39 +82,39 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x04) {
             using enum cpu_cache_info;
-            const auto leaf4 = cpu_id(0x04, 0x00);
+            const auto leaf_0x04 = cpu_id(0x04, 0x00);
 
             // eax register
-            if (leaf4.eax_bit( 0u)) result |= cache_type_bit_0;
-            if (leaf4.eax_bit( 1u)) result |= cache_type_bit_1;
-            if (leaf4.eax_bit( 2u)) result |= cache_type_bit_2;
-            if (leaf4.eax_bit( 3u)) result |= cache_type_bit_3;
-            if (leaf4.eax_bit( 4u)) result |= cache_type_bit_4;
-            if (leaf4.eax_bit( 5u)) result |= cache_level_bit_0;
-            if (leaf4.eax_bit( 6u)) result |= cache_level_bit_1;
-            if (leaf4.eax_bit( 7u)) result |= cache_level_bit_2;
-            if (leaf4.eax_bit( 8u)) result |= self_init_cache_level;
-            if (leaf4.eax_bit( 9u)) result |= fully_associative_cache;
-            if (leaf4.eax_bit(10u)) result |= wbinvd_cache_invalidation_execution_scope;
-            if (leaf4.eax_bit(11u)) result |= cache_inclusiveness;
-            if (leaf4.eax_bit(14u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_0;
-            if (leaf4.eax_bit(15u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_1;
-            if (leaf4.eax_bit(16u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_2;
-            if (leaf4.eax_bit(17u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_3;
-            if (leaf4.eax_bit(18u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_4;
-            if (leaf4.eax_bit(19u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_5;
-            if (leaf4.eax_bit(20u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_6;
-            if (leaf4.eax_bit(21u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_7;
-            if (leaf4.eax_bit(22u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_8;
-            if (leaf4.eax_bit(23u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_9;
-            if (leaf4.eax_bit(24u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_10;
-            if (leaf4.eax_bit(25u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_11;
-            if (leaf4.eax_bit(26u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_0;
-            if (leaf4.eax_bit(27u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_1;
-            if (leaf4.eax_bit(28u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_2;
-            if (leaf4.eax_bit(29u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_3;
-            if (leaf4.eax_bit(30u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_4;
-            if (leaf4.eax_bit(31u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_5;
+            if (leaf_0x04.eax_bit( 0u)) result |= cache_type_bit_0;
+            if (leaf_0x04.eax_bit( 1u)) result |= cache_type_bit_1;
+            if (leaf_0x04.eax_bit( 2u)) result |= cache_type_bit_2;
+            if (leaf_0x04.eax_bit( 3u)) result |= cache_type_bit_3;
+            if (leaf_0x04.eax_bit( 4u)) result |= cache_type_bit_4;
+            if (leaf_0x04.eax_bit( 5u)) result |= cache_level_bit_0;
+            if (leaf_0x04.eax_bit( 6u)) result |= cache_level_bit_1;
+            if (leaf_0x04.eax_bit( 7u)) result |= cache_level_bit_2;
+            if (leaf_0x04.eax_bit( 8u)) result |= self_init_cache_level;
+            if (leaf_0x04.eax_bit( 9u)) result |= fully_associative_cache;
+            if (leaf_0x04.eax_bit(10u)) result |= wbinvd_cache_invalidation_execution_scope;
+            if (leaf_0x04.eax_bit(11u)) result |= cache_inclusiveness;
+            if (leaf_0x04.eax_bit(14u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_0;
+            if (leaf_0x04.eax_bit(15u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_1;
+            if (leaf_0x04.eax_bit(16u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_2;
+            if (leaf_0x04.eax_bit(17u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_3;
+            if (leaf_0x04.eax_bit(18u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_4;
+            if (leaf_0x04.eax_bit(19u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_5;
+            if (leaf_0x04.eax_bit(20u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_6;
+            if (leaf_0x04.eax_bit(21u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_7;
+            if (leaf_0x04.eax_bit(22u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_8;
+            if (leaf_0x04.eax_bit(23u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_9;
+            if (leaf_0x04.eax_bit(24u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_10;
+            if (leaf_0x04.eax_bit(25u)) result |= max_num_of_addressable_ids_logical_shared_cache_bit_11;
+            if (leaf_0x04.eax_bit(26u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_0;
+            if (leaf_0x04.eax_bit(27u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_1;
+            if (leaf_0x04.eax_bit(28u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_2;
+            if (leaf_0x04.eax_bit(29u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_3;
+            if (leaf_0x04.eax_bit(30u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_4;
+            if (leaf_0x04.eax_bit(31u)) result |= max_num_of_addressable_ids_cores_phys_package_bit_5;
         }
 
         return result;

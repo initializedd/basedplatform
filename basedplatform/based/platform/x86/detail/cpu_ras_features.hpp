@@ -30,13 +30,13 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000007) {
             using enum cpu_ras_feature;
-            const auto leaf8 = cpu_id(0x80000007, 0x00);
+            const auto leaf_0x80000007 = cpu_id(0x80000007, 0x00);
 
             // ebx register
-            if (leaf8.ebx_bit(0u)) result |= mca_overflow_recov;
-            if (leaf8.ebx_bit(1u)) result |= succor;
-            if (leaf8.ebx_bit(2u)) result |= hwa;
-            if (leaf8.ebx_bit(3u)) result |= scalable_mca;
+            if (leaf_0x80000007.ebx_bit(0u)) result |= mca_overflow_recov;
+            if (leaf_0x80000007.ebx_bit(1u)) result |= succor;
+            if (leaf_0x80000007.ebx_bit(2u)) result |= hwa;
+            if (leaf_0x80000007.ebx_bit(3u)) result |= scalable_mca;
         }
 
         return result;

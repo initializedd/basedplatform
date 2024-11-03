@@ -67,31 +67,31 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x06) {
             using enum cpu_hardware_feedback;
-            const auto leaf6 = cpu_id(0x06, 0x00);
+            const auto leaf_0x06 = cpu_id(0x06, 0x00);
 
             // edx register
-            if (leaf6.edx_bit( 0u)) result |= performance_reporting;
-            if (leaf6.edx_bit( 1u)) result |= efficiency_reporting;
-            if (leaf6.edx_bit( 8u)) result |= size_of_hardware_feedback_interface_bit_0;
-            if (leaf6.edx_bit( 9u)) result |= size_of_hardware_feedback_interface_bit_1;
-            if (leaf6.edx_bit(10u)) result |= size_of_hardware_feedback_interface_bit_2;
-            if (leaf6.edx_bit(11u)) result |= size_of_hardware_feedback_interface_bit_3;
-            if (leaf6.edx_bit(16u)) result |= row_index_bit_0;
-            if (leaf6.edx_bit(17u)) result |= row_index_bit_1;
-            if (leaf6.edx_bit(18u)) result |= row_index_bit_2;
-            if (leaf6.edx_bit(19u)) result |= row_index_bit_3;
-            if (leaf6.edx_bit(20u)) result |= row_index_bit_4;
-            if (leaf6.edx_bit(21u)) result |= row_index_bit_5;
-            if (leaf6.edx_bit(22u)) result |= row_index_bit_6;
-            if (leaf6.edx_bit(23u)) result |= row_index_bit_7;
-            if (leaf6.edx_bit(24u)) result |= row_index_bit_8;
-            if (leaf6.edx_bit(25u)) result |= row_index_bit_9;
-            if (leaf6.edx_bit(26u)) result |= row_index_bit_10;
-            if (leaf6.edx_bit(27u)) result |= row_index_bit_11;
-            if (leaf6.edx_bit(28u)) result |= row_index_bit_12;
-            if (leaf6.edx_bit(29u)) result |= row_index_bit_13;
-            if (leaf6.edx_bit(30u)) result |= row_index_bit_14;
-            if (leaf6.edx_bit(31u)) result |= row_index_bit_15;
+            if (leaf_0x06.edx_bit( 0u)) result |= performance_reporting;
+            if (leaf_0x06.edx_bit( 1u)) result |= efficiency_reporting;
+            if (leaf_0x06.edx_bit( 8u)) result |= size_of_hardware_feedback_interface_bit_0;
+            if (leaf_0x06.edx_bit( 9u)) result |= size_of_hardware_feedback_interface_bit_1;
+            if (leaf_0x06.edx_bit(10u)) result |= size_of_hardware_feedback_interface_bit_2;
+            if (leaf_0x06.edx_bit(11u)) result |= size_of_hardware_feedback_interface_bit_3;
+            if (leaf_0x06.edx_bit(16u)) result |= row_index_bit_0;
+            if (leaf_0x06.edx_bit(17u)) result |= row_index_bit_1;
+            if (leaf_0x06.edx_bit(18u)) result |= row_index_bit_2;
+            if (leaf_0x06.edx_bit(19u)) result |= row_index_bit_3;
+            if (leaf_0x06.edx_bit(20u)) result |= row_index_bit_4;
+            if (leaf_0x06.edx_bit(21u)) result |= row_index_bit_5;
+            if (leaf_0x06.edx_bit(22u)) result |= row_index_bit_6;
+            if (leaf_0x06.edx_bit(23u)) result |= row_index_bit_7;
+            if (leaf_0x06.edx_bit(24u)) result |= row_index_bit_8;
+            if (leaf_0x06.edx_bit(25u)) result |= row_index_bit_9;
+            if (leaf_0x06.edx_bit(26u)) result |= row_index_bit_10;
+            if (leaf_0x06.edx_bit(27u)) result |= row_index_bit_11;
+            if (leaf_0x06.edx_bit(28u)) result |= row_index_bit_12;
+            if (leaf_0x06.edx_bit(29u)) result |= row_index_bit_13;
+            if (leaf_0x06.edx_bit(30u)) result |= row_index_bit_14;
+            if (leaf_0x06.edx_bit(31u)) result |= row_index_bit_15;
         }
 
         return result;

@@ -85,41 +85,41 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000005) {
             using enum cpu_tlb_identifier;
-            const auto leaf8 = cpu_id(0x80000005, 0x00);
+            const auto leaf_0x80000005 = cpu_id(0x80000005, 0x00);
 
             // eax register
-            if (leaf8.eax_bit( 0u)) result |= num_of_instruction_tlb_entries_bit_0;
-            if (leaf8.eax_bit( 1u)) result |= num_of_instruction_tlb_entries_bit_1;
-            if (leaf8.eax_bit( 2u)) result |= num_of_instruction_tlb_entries_bit_2;
-            if (leaf8.eax_bit( 3u)) result |= num_of_instruction_tlb_entries_bit_3;
-            if (leaf8.eax_bit( 4u)) result |= num_of_instruction_tlb_entries_bit_4;
-            if (leaf8.eax_bit( 5u)) result |= num_of_instruction_tlb_entries_bit_5;
-            if (leaf8.eax_bit( 6u)) result |= num_of_instruction_tlb_entries_bit_6;
-            if (leaf8.eax_bit( 7u)) result |= num_of_instruction_tlb_entries_bit_7;
-            if (leaf8.eax_bit( 8u)) result |= instruction_tlb_associativity_bit_0;
-            if (leaf8.eax_bit( 9u)) result |= instruction_tlb_associativity_bit_1;
-            if (leaf8.eax_bit(10u)) result |= instruction_tlb_associativity_bit_2;
-            if (leaf8.eax_bit(11u)) result |= instruction_tlb_associativity_bit_3;
-            if (leaf8.eax_bit(12u)) result |= instruction_tlb_associativity_bit_4;
-            if (leaf8.eax_bit(13u)) result |= instruction_tlb_associativity_bit_5;
-            if (leaf8.eax_bit(14u)) result |= instruction_tlb_associativity_bit_6;
-            if (leaf8.eax_bit(15u)) result |= instruction_tlb_associativity_bit_7;
-            if (leaf8.eax_bit(16u)) result |= num_of_data_tlb_entries_bit_0;
-            if (leaf8.eax_bit(17u)) result |= num_of_data_tlb_entries_bit_1;
-            if (leaf8.eax_bit(18u)) result |= num_of_data_tlb_entries_bit_2;
-            if (leaf8.eax_bit(19u)) result |= num_of_data_tlb_entries_bit_3;
-            if (leaf8.eax_bit(20u)) result |= num_of_data_tlb_entries_bit_4;
-            if (leaf8.eax_bit(21u)) result |= num_of_data_tlb_entries_bit_5;
-            if (leaf8.eax_bit(22u)) result |= num_of_data_tlb_entries_bit_6;
-            if (leaf8.eax_bit(23u)) result |= num_of_data_tlb_entries_bit_7;
-            if (leaf8.eax_bit(24u)) result |= data_tlb_associativity_bit_0;
-            if (leaf8.eax_bit(25u)) result |= data_tlb_associativity_bit_1;
-            if (leaf8.eax_bit(26u)) result |= data_tlb_associativity_bit_2;
-            if (leaf8.eax_bit(27u)) result |= data_tlb_associativity_bit_3;
-            if (leaf8.eax_bit(28u)) result |= data_tlb_associativity_bit_4;
-            if (leaf8.eax_bit(29u)) result |= data_tlb_associativity_bit_5;
-            if (leaf8.eax_bit(30u)) result |= data_tlb_associativity_bit_6;
-            if (leaf8.eax_bit(31u)) result |= data_tlb_associativity_bit_7;
+            if (leaf_0x80000005.eax_bit( 0u)) result |= num_of_instruction_tlb_entries_bit_0;
+            if (leaf_0x80000005.eax_bit( 1u)) result |= num_of_instruction_tlb_entries_bit_1;
+            if (leaf_0x80000005.eax_bit( 2u)) result |= num_of_instruction_tlb_entries_bit_2;
+            if (leaf_0x80000005.eax_bit( 3u)) result |= num_of_instruction_tlb_entries_bit_3;
+            if (leaf_0x80000005.eax_bit( 4u)) result |= num_of_instruction_tlb_entries_bit_4;
+            if (leaf_0x80000005.eax_bit( 5u)) result |= num_of_instruction_tlb_entries_bit_5;
+            if (leaf_0x80000005.eax_bit( 6u)) result |= num_of_instruction_tlb_entries_bit_6;
+            if (leaf_0x80000005.eax_bit( 7u)) result |= num_of_instruction_tlb_entries_bit_7;
+            if (leaf_0x80000005.eax_bit( 8u)) result |= instruction_tlb_associativity_bit_0;
+            if (leaf_0x80000005.eax_bit( 9u)) result |= instruction_tlb_associativity_bit_1;
+            if (leaf_0x80000005.eax_bit(10u)) result |= instruction_tlb_associativity_bit_2;
+            if (leaf_0x80000005.eax_bit(11u)) result |= instruction_tlb_associativity_bit_3;
+            if (leaf_0x80000005.eax_bit(12u)) result |= instruction_tlb_associativity_bit_4;
+            if (leaf_0x80000005.eax_bit(13u)) result |= instruction_tlb_associativity_bit_5;
+            if (leaf_0x80000005.eax_bit(14u)) result |= instruction_tlb_associativity_bit_6;
+            if (leaf_0x80000005.eax_bit(15u)) result |= instruction_tlb_associativity_bit_7;
+            if (leaf_0x80000005.eax_bit(16u)) result |= num_of_data_tlb_entries_bit_0;
+            if (leaf_0x80000005.eax_bit(17u)) result |= num_of_data_tlb_entries_bit_1;
+            if (leaf_0x80000005.eax_bit(18u)) result |= num_of_data_tlb_entries_bit_2;
+            if (leaf_0x80000005.eax_bit(19u)) result |= num_of_data_tlb_entries_bit_3;
+            if (leaf_0x80000005.eax_bit(20u)) result |= num_of_data_tlb_entries_bit_4;
+            if (leaf_0x80000005.eax_bit(21u)) result |= num_of_data_tlb_entries_bit_5;
+            if (leaf_0x80000005.eax_bit(22u)) result |= num_of_data_tlb_entries_bit_6;
+            if (leaf_0x80000005.eax_bit(23u)) result |= num_of_data_tlb_entries_bit_7;
+            if (leaf_0x80000005.eax_bit(24u)) result |= data_tlb_associativity_bit_0;
+            if (leaf_0x80000005.eax_bit(25u)) result |= data_tlb_associativity_bit_1;
+            if (leaf_0x80000005.eax_bit(26u)) result |= data_tlb_associativity_bit_2;
+            if (leaf_0x80000005.eax_bit(27u)) result |= data_tlb_associativity_bit_3;
+            if (leaf_0x80000005.eax_bit(28u)) result |= data_tlb_associativity_bit_4;
+            if (leaf_0x80000005.eax_bit(29u)) result |= data_tlb_associativity_bit_5;
+            if (leaf_0x80000005.eax_bit(30u)) result |= data_tlb_associativity_bit_6;
+            if (leaf_0x80000005.eax_bit(31u)) result |= data_tlb_associativity_bit_7;
         }
 
         return result;

@@ -14,12 +14,12 @@ namespace based::platform::x86::detail {
         debug,
         mode64bit,
         // bit 3 reserved
-        provisionkey,
+        provisionkey   = 4u,
         einittoken_key,
         cet,
         kss,
         // bits 9:8 reserved
-        aexnotify
+        aexnotify      = 10u
         // bits 31:11 reserved
     }; // enum class cpu_secs_attribute : std::uint8_t
 
@@ -39,17 +39,17 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x12) {
             using enum cpu_secs_attribute;
-            const auto leaf18 = cpu_id(0x12, 0x01);
+            const auto leaf_0x12 = cpu_id(0x12, 0x01);
 
             // eax register
-            if (leaf18.eax_bit( 0u)) result |= init;
-            if (leaf18.eax_bit( 1u)) result |= debug;
-            if (leaf18.eax_bit( 2u)) result |= mode64bit;
-            if (leaf18.eax_bit( 4u)) result |= provisionkey;
-            if (leaf18.eax_bit( 5u)) result |= einittoken_key;
-            if (leaf18.eax_bit( 6u)) result |= cet;
-            if (leaf18.eax_bit( 7u)) result |= kss;
-            if (leaf18.eax_bit(10u)) result |= aexnotify;
+            if (leaf_0x12.eax_bit( 0u)) result |= init;
+            if (leaf_0x12.eax_bit( 1u)) result |= debug;
+            if (leaf_0x12.eax_bit( 2u)) result |= mode64bit;
+            if (leaf_0x12.eax_bit( 4u)) result |= provisionkey;
+            if (leaf_0x12.eax_bit( 5u)) result |= einittoken_key;
+            if (leaf_0x12.eax_bit( 6u)) result |= cet;
+            if (leaf_0x12.eax_bit( 7u)) result |= kss;
+            if (leaf_0x12.eax_bit(10u)) result |= aexnotify;
         }
 
         return result;

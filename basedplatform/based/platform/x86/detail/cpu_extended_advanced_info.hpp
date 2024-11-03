@@ -81,37 +81,37 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x80000001) {
             using enum cpu_extended_advanced_info;
-            const auto leaf8 = cpu_id(0x80000001, 0x00);
+            const auto leaf_0x80000001 = cpu_id(0x80000001, 0x00);
 
             // ecx register
-            if (leaf8.ecx_bit( 0u)) result |= lahf_lm;
-            if (leaf8.ecx_bit( 1u)) result |= cmp_legacy;
-            if (leaf8.ecx_bit( 2u)) result |= svm;
-            if (leaf8.ecx_bit( 3u)) result |= extrapic;
-            if (leaf8.ecx_bit( 4u)) result |= cr8_legacy;
-            if (leaf8.ecx_bit( 5u)) result |= abm;
-            if (leaf8.ecx_bit( 6u)) result |= sse4a;
-            if (leaf8.ecx_bit( 7u)) result |= misalignsse;
-            if (leaf8.ecx_bit( 8u)) result |= now3dprefetch;
-            if (leaf8.ecx_bit( 9u)) result |= osvw;
-            if (leaf8.ecx_bit(10u)) result |= ibs;
-            if (leaf8.ecx_bit(11u)) result |= xop;
-            if (leaf8.ecx_bit(12u)) result |= skinit;
-            if (leaf8.ecx_bit(13u)) result |= wdt;
-            if (leaf8.ecx_bit(15u)) result |= lwp;
-            if (leaf8.ecx_bit(16u)) result |= fma4;
-            if (leaf8.ecx_bit(17u)) result |= tce;
-            if (leaf8.ecx_bit(19u)) result |= nodeid_msr;
-            if (leaf8.ecx_bit(21u)) result |= tbm;
-            if (leaf8.ecx_bit(22u)) result |= topoext;
-            if (leaf8.ecx_bit(23u)) result |= perfctr_core;
-            if (leaf8.ecx_bit(24u)) result |= perfctr_nb;
-            if (leaf8.ecx_bit(25u)) result |= stream_perf_mon;
-            if (leaf8.ecx_bit(26u)) result |= dbx;
-            if (leaf8.ecx_bit(27u)) result |= perftsc;
-            if (leaf8.ecx_bit(28u)) result |= pcx_l2i;
-            if (leaf8.ecx_bit(29u)) result |= monitorx;
-            if (leaf8.ecx_bit(30u)) result |= addr_mask_ext;
+            if (leaf_0x80000001.ecx_bit( 0u)) result |= lahf_lm;
+            if (leaf_0x80000001.ecx_bit( 1u)) result |= cmp_legacy;
+            if (leaf_0x80000001.ecx_bit( 2u)) result |= svm;
+            if (leaf_0x80000001.ecx_bit( 3u)) result |= extrapic;
+            if (leaf_0x80000001.ecx_bit( 4u)) result |= cr8_legacy;
+            if (leaf_0x80000001.ecx_bit( 5u)) result |= abm;
+            if (leaf_0x80000001.ecx_bit( 6u)) result |= sse4a;
+            if (leaf_0x80000001.ecx_bit( 7u)) result |= misalignsse;
+            if (leaf_0x80000001.ecx_bit( 8u)) result |= now3dprefetch;
+            if (leaf_0x80000001.ecx_bit( 9u)) result |= osvw;
+            if (leaf_0x80000001.ecx_bit(10u)) result |= ibs;
+            if (leaf_0x80000001.ecx_bit(11u)) result |= xop;
+            if (leaf_0x80000001.ecx_bit(12u)) result |= skinit;
+            if (leaf_0x80000001.ecx_bit(13u)) result |= wdt;
+            if (leaf_0x80000001.ecx_bit(15u)) result |= lwp;
+            if (leaf_0x80000001.ecx_bit(16u)) result |= fma4;
+            if (leaf_0x80000001.ecx_bit(17u)) result |= tce;
+            if (leaf_0x80000001.ecx_bit(19u)) result |= nodeid_msr;
+            if (leaf_0x80000001.ecx_bit(21u)) result |= tbm;
+            if (leaf_0x80000001.ecx_bit(22u)) result |= topoext;
+            if (leaf_0x80000001.ecx_bit(23u)) result |= perfctr_core;
+            if (leaf_0x80000001.ecx_bit(24u)) result |= perfctr_nb;
+            if (leaf_0x80000001.ecx_bit(25u)) result |= stream_perf_mon;
+            if (leaf_0x80000001.ecx_bit(26u)) result |= dbx;
+            if (leaf_0x80000001.ecx_bit(27u)) result |= perftsc;
+            if (leaf_0x80000001.ecx_bit(28u)) result |= pcx_l2i;
+            if (leaf_0x80000001.ecx_bit(29u)) result |= monitorx;
+            if (leaf_0x80000001.ecx_bit(30u)) result |= addr_mask_ext;
         }
 
         return result;

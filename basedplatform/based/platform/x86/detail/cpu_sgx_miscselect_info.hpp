@@ -26,11 +26,11 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x12) {
             using enum cpu_sgx_miscselect_info;
-            const auto leaf12 = cpu_id(0x12, 0x00);
+            const auto leaf_0x12 = cpu_id(0x12, 0x00);
 
-            // ebx
-            if (leaf12.ebx_bit(0u)) result |= exinfo;
-            if (leaf12.ebx_bit(1u)) result |= cpinfo;
+            // ebx register
+            if (leaf_0x12.ebx_bit(0u)) result |= exinfo;
+            if (leaf_0x12.ebx_bit(1u)) result |= cpinfo;
         }
     }
 } // namespace based::platform::x86::detail

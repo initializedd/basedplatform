@@ -42,19 +42,19 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x14) {
             using enum processor_trace_feature;
-            const auto leaf14 = cpu_id(0x14, 0x00);
+            const auto leaf_0x14 = cpu_id(0x14, 0x00);
 
             // ebx register
-            if (leaf14.ebx_bit(0u)) result |= cr3;
-            if (leaf14.ebx_bit(1u)) result |= psb_and_cyc;
-            if (leaf14.ebx_bit(2u)) result |= ip_and_tracestop_and_pt_msrs;
-            if (leaf14.ebx_bit(3u)) result |= mtc_and_cofi;
-            if (leaf14.ebx_bit(4u)) result |= ptwrite;
-            if (leaf14.ebx_bit(5u)) result |= power_event_trace;
-            if (leaf14.ebx_bit(6u)) result |= psb_and_pmi;
-            if (leaf14.ebx_bit(7u)) result |= event_trace_packet_generation;
-            if (leaf14.ebx_bit(8u)) result |= tnt;
-            if (leaf14.ebx_bit(9u)) result |= pttt;
+            if (leaf_0x14.ebx_bit(0u)) result |= cr3;
+            if (leaf_0x14.ebx_bit(1u)) result |= psb_and_cyc;
+            if (leaf_0x14.ebx_bit(2u)) result |= ip_and_tracestop_and_pt_msrs;
+            if (leaf_0x14.ebx_bit(3u)) result |= mtc_and_cofi;
+            if (leaf_0x14.ebx_bit(4u)) result |= ptwrite;
+            if (leaf_0x14.ebx_bit(5u)) result |= power_event_trace;
+            if (leaf_0x14.ebx_bit(6u)) result |= psb_and_pmi;
+            if (leaf_0x14.ebx_bit(7u)) result |= event_trace_packet_generation;
+            if (leaf_0x14.ebx_bit(8u)) result |= tnt;
+            if (leaf_0x14.ebx_bit(9u)) result |= pttt;
         }
 
         return result;

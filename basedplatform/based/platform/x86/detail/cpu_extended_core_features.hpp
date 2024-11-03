@@ -84,40 +84,40 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_core_feature;
-            const auto leaf7 = cpu_id(0x07, 0x00);
+            const auto leaf_0x07 = cpu_id(0x07, 0x00);
 
             // ebx register
-            if (leaf7.ebx_bit( 0u)) result |= fsgsbase;
-            if (leaf7.ebx_bit( 1u)) result |= ia32_tsc_adjust_msr;
-            if (leaf7.ebx_bit( 2u)) result |= sgx;
-            if (leaf7.ebx_bit( 3u)) result |= bmi1;
-            if (leaf7.ebx_bit( 4u)) result |= hle;
-            if (leaf7.ebx_bit( 5u)) result |= avx2;
-            if (leaf7.ebx_bit( 6u)) result |= fdp_excptn_only;
-            if (leaf7.ebx_bit( 7u)) result |= smep;
-            if (leaf7.ebx_bit( 8u)) result |= bmi2;
-            if (leaf7.ebx_bit( 9u)) result |= erms;
-            if (leaf7.ebx_bit(10u)) result |= invpcid;
-            if (leaf7.ebx_bit(11u)) result |= rtm;
-            if (leaf7.ebx_bit(12u)) result |= rdtm;
-            if (leaf7.ebx_bit(14u)) result |= mpx;
-            if (leaf7.ebx_bit(15u)) result |= rdta;
-            if (leaf7.ebx_bit(16u)) result |= avx512f;
-            if (leaf7.ebx_bit(17u)) result |= avx512dq;
-            if (leaf7.ebx_bit(18u)) result |= rdseed;
-            if (leaf7.ebx_bit(19u)) result |= adx;
-            if (leaf7.ebx_bit(20u)) result |= smap;
-            if (leaf7.ebx_bit(21u)) result |= avx512ifma;
-            if (leaf7.ebx_bit(22u)) result |= pcommit;
-            if (leaf7.ebx_bit(23u)) result |= clflushopt;
-            if (leaf7.ebx_bit(24u)) result |= clwb;
-            if (leaf7.ebx_bit(25u)) result |= pt;
-            if (leaf7.ebx_bit(26u)) result |= avx512pf;
-            if (leaf7.ebx_bit(27u)) result |= avx512er;
-            if (leaf7.ebx_bit(28u)) result |= avx512cd;
-            if (leaf7.ebx_bit(29u)) result |= sha;
-            if (leaf7.ebx_bit(30u)) result |= avx512bw;
-            if (leaf7.ebx_bit(31u)) result |= avx512vl;
+            if (leaf_0x07.ebx_bit( 0u)) result |= fsgsbase;
+            if (leaf_0x07.ebx_bit( 1u)) result |= ia32_tsc_adjust_msr;
+            if (leaf_0x07.ebx_bit( 2u)) result |= sgx;
+            if (leaf_0x07.ebx_bit( 3u)) result |= bmi1;
+            if (leaf_0x07.ebx_bit( 4u)) result |= hle;
+            if (leaf_0x07.ebx_bit( 5u)) result |= avx2;
+            if (leaf_0x07.ebx_bit( 6u)) result |= fdp_excptn_only;
+            if (leaf_0x07.ebx_bit( 7u)) result |= smep;
+            if (leaf_0x07.ebx_bit( 8u)) result |= bmi2;
+            if (leaf_0x07.ebx_bit( 9u)) result |= erms;
+            if (leaf_0x07.ebx_bit(10u)) result |= invpcid;
+            if (leaf_0x07.ebx_bit(11u)) result |= rtm;
+            if (leaf_0x07.ebx_bit(12u)) result |= rdtm;
+            if (leaf_0x07.ebx_bit(14u)) result |= mpx;
+            if (leaf_0x07.ebx_bit(15u)) result |= rdta;
+            if (leaf_0x07.ebx_bit(16u)) result |= avx512f;
+            if (leaf_0x07.ebx_bit(17u)) result |= avx512dq;
+            if (leaf_0x07.ebx_bit(18u)) result |= rdseed;
+            if (leaf_0x07.ebx_bit(19u)) result |= adx;
+            if (leaf_0x07.ebx_bit(20u)) result |= smap;
+            if (leaf_0x07.ebx_bit(21u)) result |= avx512ifma;
+            if (leaf_0x07.ebx_bit(22u)) result |= pcommit;
+            if (leaf_0x07.ebx_bit(23u)) result |= clflushopt;
+            if (leaf_0x07.ebx_bit(24u)) result |= clwb;
+            if (leaf_0x07.ebx_bit(25u)) result |= pt;
+            if (leaf_0x07.ebx_bit(26u)) result |= avx512pf;
+            if (leaf_0x07.ebx_bit(27u)) result |= avx512er;
+            if (leaf_0x07.ebx_bit(28u)) result |= avx512cd;
+            if (leaf_0x07.ebx_bit(29u)) result |= sha;
+            if (leaf_0x07.ebx_bit(30u)) result |= avx512bw;
+            if (leaf_0x07.ebx_bit(31u)) result |= avx512vl;
         }
 
         return result;

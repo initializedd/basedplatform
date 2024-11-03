@@ -83,43 +83,43 @@ namespace based::platform::x86::detail {
     cpu_mwait_feature_mask supported_cpu_mwait_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_mwait_feature_mask{};
 
-        if (max_leaf >= 5u) {
+        if (max_leaf >= 0x05) {
             using enum cpu_mwait_feature;
-            const auto leaf5 = cpu_id(0x05, 0x00);
+            const auto leaf_0x05 = cpu_id(0x05, 0x00);
 
             // edx register
-            if (leaf5.edx_bit( 0u)) result |= c0_sub_states_supported_bit_0;
-            if (leaf5.edx_bit( 1u)) result |= c0_sub_states_supported_bit_1;
-            if (leaf5.edx_bit( 2u)) result |= c0_sub_states_supported_bit_2;
-            if (leaf5.edx_bit( 3u)) result |= c0_sub_states_supported_bit_3;
-            if (leaf5.edx_bit( 4u)) result |= c1_sub_states_supported_bit_0;
-            if (leaf5.edx_bit( 5u)) result |= c1_sub_states_supported_bit_1;
-            if (leaf5.edx_bit( 6u)) result |= c1_sub_states_supported_bit_2;
-            if (leaf5.edx_bit( 7u)) result |= c1_sub_states_supported_bit_3;
-            if (leaf5.edx_bit( 8u)) result |= c2_sub_states_supported_bit_0;
-            if (leaf5.edx_bit( 9u)) result |= c2_sub_states_supported_bit_1;
-            if (leaf5.edx_bit(10u)) result |= c2_sub_states_supported_bit_2;
-            if (leaf5.edx_bit(11u)) result |= c2_sub_states_supported_bit_3;
-            if (leaf5.edx_bit(12u)) result |= c3_sub_states_supported_bit_0;
-            if (leaf5.edx_bit(13u)) result |= c3_sub_states_supported_bit_1;
-            if (leaf5.edx_bit(14u)) result |= c3_sub_states_supported_bit_2;
-            if (leaf5.edx_bit(15u)) result |= c3_sub_states_supported_bit_3;
-            if (leaf5.edx_bit(16u)) result |= c4_sub_states_supported_bit_0;
-            if (leaf5.edx_bit(17u)) result |= c4_sub_states_supported_bit_1;
-            if (leaf5.edx_bit(18u)) result |= c4_sub_states_supported_bit_2;
-            if (leaf5.edx_bit(19u)) result |= c4_sub_states_supported_bit_3;
-            if (leaf5.edx_bit(20u)) result |= c5_sub_states_supported_bit_0;
-            if (leaf5.edx_bit(21u)) result |= c5_sub_states_supported_bit_1;
-            if (leaf5.edx_bit(22u)) result |= c5_sub_states_supported_bit_2;
-            if (leaf5.edx_bit(23u)) result |= c5_sub_states_supported_bit_3;
-            if (leaf5.edx_bit(24u)) result |= c6_sub_states_supported_bit_0;
-            if (leaf5.edx_bit(25u)) result |= c6_sub_states_supported_bit_1;
-            if (leaf5.edx_bit(26u)) result |= c6_sub_states_supported_bit_2;
-            if (leaf5.edx_bit(27u)) result |= c6_sub_states_supported_bit_3;
-            if (leaf5.edx_bit(28u)) result |= c7_sub_states_supported_bit_0;
-            if (leaf5.edx_bit(29u)) result |= c7_sub_states_supported_bit_1;
-            if (leaf5.edx_bit(30u)) result |= c7_sub_states_supported_bit_2;
-            if (leaf5.edx_bit(31u)) result |= c7_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit( 0u)) result |= c0_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit( 1u)) result |= c0_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit( 2u)) result |= c0_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit( 3u)) result |= c0_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit( 4u)) result |= c1_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit( 5u)) result |= c1_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit( 6u)) result |= c1_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit( 7u)) result |= c1_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit( 8u)) result |= c2_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit( 9u)) result |= c2_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit(10u)) result |= c2_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit(11u)) result |= c2_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit(12u)) result |= c3_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit(13u)) result |= c3_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit(14u)) result |= c3_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit(15u)) result |= c3_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit(16u)) result |= c4_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit(17u)) result |= c4_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit(18u)) result |= c4_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit(19u)) result |= c4_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit(20u)) result |= c5_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit(21u)) result |= c5_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit(22u)) result |= c5_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit(23u)) result |= c5_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit(24u)) result |= c6_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit(25u)) result |= c6_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit(26u)) result |= c6_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit(27u)) result |= c6_sub_states_supported_bit_3;
+            if (leaf_0x05.edx_bit(28u)) result |= c7_sub_states_supported_bit_0;
+            if (leaf_0x05.edx_bit(29u)) result |= c7_sub_states_supported_bit_1;
+            if (leaf_0x05.edx_bit(30u)) result |= c7_sub_states_supported_bit_2;
+            if (leaf_0x05.edx_bit(31u)) result |= c7_sub_states_supported_bit_3;
         }
 
         return result;

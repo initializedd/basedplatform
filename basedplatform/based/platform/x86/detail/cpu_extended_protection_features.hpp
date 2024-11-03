@@ -26,11 +26,11 @@ namespace based::platform::x86::detail {
 
         if (max_leaf >= 0x07) {
             using enum cpu_extended_protection_feature;
-            const auto leaf7 = cpu_id(0x07, 0x01);
+            const auto leaf_0x07 = cpu_id(0x07, 0x01);
 
             // ebx register
-            if (leaf7.ebx_bit(0u)) result |= ppin;
-            if (leaf7.ebx_bit(1u)) result |= pbndkb;
+            if (leaf_0x07.ebx_bit(0u)) result |= ppin;
+            if (leaf_0x07.ebx_bit(1u)) result |= pbndkb;
         }
 
         return result;
