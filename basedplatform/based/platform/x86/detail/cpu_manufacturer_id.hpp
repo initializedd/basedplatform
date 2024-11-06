@@ -10,7 +10,7 @@
 
 namespace based::platform::x86::detail {
     [[nodiscard]]
-    std::string cpu_manufacturer_id(const std::uint32_t max_leaf) noexcept {
+    inline std::string cpu_manufacturer_id(const std::uint32_t max_leaf) noexcept {
         std::string result = "";
 
         if (max_leaf >= 0x00) {

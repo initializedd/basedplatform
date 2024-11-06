@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Extended Feature Identification 2
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000021h:_Extended_Feature_Identification_2
@@ -73,7 +74,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_extended_feature_identification_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_extended_feature_identification_mask supported_cpu_extended_feature_identifications(const std::uint32_t max_leaf) noexcept {
+    inline cpu_extended_feature_identification_mask supported_cpu_extended_feature_identifications(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_extended_feature_identification_mask{};
 
         if (max_leaf >= 0x80000021) {

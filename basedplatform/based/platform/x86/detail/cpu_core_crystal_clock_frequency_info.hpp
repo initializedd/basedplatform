@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // TSC and Core Crystal frequency information
 // https://en.wikipedia.org/wiki/CPUID#EAX=15h_and_EAX=16h:_CPU,_TSC,_Bus_and_Core_Crystal_Clock_frequencies
@@ -80,7 +81,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_tsc_to_core_crystal_clock_frequency_denominator_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_tsc_to_core_crystal_clock_frequency_denominator_mask supported_cpu_tsc_to_crystal_clock_frequency_denominator(const std::uint32_t max_leaf) noexcept {
+    inline cpu_tsc_to_core_crystal_clock_frequency_denominator_mask supported_cpu_tsc_to_crystal_clock_frequency_denominator(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_tsc_to_core_crystal_clock_frequency_denominator_mask{};
 
         if (max_leaf >= 0x15) {
@@ -196,7 +197,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_tsc_to_core_crystal_clock_frequency_numerator_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_tsc_to_core_crystal_clock_frequency_numerator_mask supported_cpu_tsc_to_crystal_clock_frequency_numerator(const std::uint32_t max_leaf) noexcept {
+    inline cpu_tsc_to_core_crystal_clock_frequency_numerator_mask supported_cpu_tsc_to_crystal_clock_frequency_numerator(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_tsc_to_core_crystal_clock_frequency_numerator_mask{};
 
         if (max_leaf >= 0x15) {
@@ -312,7 +313,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_core_crystal_clock_frequency_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_core_crystal_clock_frequency_mask supported_cpu_core_crystal_clock_frequency(const std::uint32_t max_leaf) noexcept {
+    inline cpu_core_crystal_clock_frequency_mask supported_cpu_core_crystal_clock_frequency(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_core_crystal_clock_frequency_mask{};
 
         if (max_leaf >= 0x15) {

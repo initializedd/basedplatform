@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Intel Processor Trace Extended Features
 // https://en.wikipedia.org/wiki/CPUID#EAX=14h,_ECX=0:_Processor_Trace
@@ -27,7 +28,7 @@ namespace based::platform::x86::detail {
     }; // enum class processor_trace_extended_feature_mask : std::uint32_t
 
     [[nodiscard]]
-    processor_trace_extended_feature_mask supported_processor_trace_extended_features(const std::uint32_t max_leaf) noexcept {
+    inline processor_trace_extended_feature_mask supported_processor_trace_extended_features(const std::uint32_t max_leaf) noexcept {
         auto result = processor_trace_extended_feature_mask{};
 
         if (max_leaf >= 0x14) {

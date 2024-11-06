@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Processor Serial Number
 // https://en.wikipedia.org/wiki/CPUID#EAX=3:_Processor_Serial_Number
@@ -144,7 +145,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_serial_number_mask : std::uint64_t
 
     [[nodiscard]]
-    cpu_serial_number_mask intel_pentium_3_serial_number(const std::uint32_t max_leaf) noexcept {
+    inline cpu_serial_number_mask intel_pentium_3_serial_number(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_serial_number_mask{};
 
         if (max_leaf >= 0x03) {
@@ -224,7 +225,7 @@ namespace based::platform::x86::detail {
     }
 
     [[nodiscard]]
-    cpu_serial_number_mask transmeta_efficeon_serial_number(const std::uint32_t max_leaf) noexcept {
+    inline cpu_serial_number_mask transmeta_efficeon_serial_number(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_serial_number_mask{};
 
         if (max_leaf >= 0x03) {
@@ -304,7 +305,7 @@ namespace based::platform::x86::detail {
     }
 
     [[nodiscard]]
-    cpu_serial_number_mask transmeta_crusoe_serial_number(const std::uint32_t max_leaf) noexcept {
+    inline cpu_serial_number_mask transmeta_crusoe_serial_number(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_serial_number_mask{};
 
         if (max_leaf >= 0x03) {

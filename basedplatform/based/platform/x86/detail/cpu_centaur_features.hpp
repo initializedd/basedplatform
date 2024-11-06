@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Centaur Feature Information
 // https://en.wikipedia.org/wiki/CPUID#EAX=C0000001h:_Centaur_Feature_Information
@@ -79,7 +80,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_centaur_feature_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_centaur_feature_mask supported_cpu_centaur_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_centaur_feature_mask supported_cpu_centaur_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_centaur_feature_mask{};
 
         if (max_leaf >= 0xC0000001) {

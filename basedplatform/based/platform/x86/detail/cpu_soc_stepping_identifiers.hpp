@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // SoC Stepping ID
 // https://en.wikipedia.org/wiki/CPUID#EAX=17h:_SoC_Vendor_Attribute_Enumeration
@@ -80,7 +81,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_soc_stepping_identifier_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_soc_stepping_identifier_mask supported_cpu_soc_stepping_identifiers(const std::uint32_t max_leaf) noexcept {
+    inline cpu_soc_stepping_identifier_mask supported_cpu_soc_stepping_identifiers(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_soc_stepping_identifier_mask{};
 
         if (max_leaf >= 0x17) {

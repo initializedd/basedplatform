@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // AVX10 Features
 // https://en.wikipedia.org/wiki/CPUID#EAX=24h,_ECX=0:_AVX10_Features
@@ -39,7 +40,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_avx10_feature_mask
 
     [[nodiscard]]
-    cpu_avx10_feature_mask supported_cpu_avx10_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_avx10_feature_mask supported_cpu_avx10_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_avx10_feature_mask{};
 
         if (max_leaf >= 0x24) {

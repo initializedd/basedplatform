@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Extended feature bits in EDX
 // https://en.wikipedia.org/wiki/CPUID#EAX=7,_ECX=2:_Extended_Features
@@ -33,7 +34,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_extended_control_feature_mask : std::uiint32_t
 
     [[nodiscard]]
-    cpu_extended_control_feature_mask supported_cpu_extended_control_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_extended_control_feature_mask supported_cpu_extended_control_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_extended_control_feature_mask{};
 
         if (max_leaf >= 0x07) {

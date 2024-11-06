@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // SGX Enclave Page Cache section information
 // https://en.wikipedia.org/wiki/CPUID#EAX=12h:_SGX_capabilities
@@ -65,7 +66,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_sgx_epc_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_sgx_epc_info_mask supported_cpu_sgx_epc_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_sgx_epc_info_mask supported_cpu_sgx_epc_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_sgx_epc_info_mask{};
 
         if (max_leaf >= 0x12) {
@@ -150,7 +151,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_sgx_epc_physical_base_address_remainder_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_sgx_epc_physical_base_address_remainder_mask supported_cpu_sgx_epc_physical_base_address_remainder(const std::uint32_t max_leaf) noexcept {
+    inline cpu_sgx_epc_physical_base_address_remainder_mask supported_cpu_sgx_epc_physical_base_address_remainder(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_sgx_epc_physical_base_address_remainder_mask{};
 
         if (max_leaf >= 0x12) {
@@ -239,7 +240,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_sgx_epc_section_property_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_sgx_epc_section_property_mask supported_cpu_sgx_epc_section_properties(const std::uint32_t max_leaf) noexcept {
+    inline cpu_sgx_epc_section_property_mask supported_cpu_sgx_epc_section_properties(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_sgx_epc_section_property_mask{};
 
         if (max_leaf >= 0x12) {
@@ -324,7 +325,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_sgx_epc_section_size_remainder_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_sgx_epc_section_size_remainder_mask supported_cpu_sgx_epc_section_size_remainder(const std::uint32_t max_leaf) noexcept {
+    inline cpu_sgx_epc_section_size_remainder_mask supported_cpu_sgx_epc_section_size_remainder(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_sgx_epc_section_size_remainder_mask{};
 
         if (max_leaf >= 0x12) {

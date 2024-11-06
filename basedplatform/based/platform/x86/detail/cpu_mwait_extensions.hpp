@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // MONITOR/MWAIT Extension Enumeration
 // https://en.wikipedia.org/wiki/CPUID#EAX=5:_MONITOR/MWAIT_Features
@@ -24,7 +25,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_mwait_extension_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_mwait_extension_mask supported_cpu_mwait_extensions(const std::uint32_t max_leaf) noexcept {
+    inline cpu_mwait_extension_mask supported_cpu_mwait_extensions(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_mwait_extension_mask{};
 
         if (max_leaf >= 0x05) {

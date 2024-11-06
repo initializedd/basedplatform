@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // CPU Advanced Features
 // https://en.wikipedia.org/wiki/CPUID#EAX=1:_Processor_Info_and_Feature_Bits
@@ -79,7 +80,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_advanced_feature_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_advanced_feature_mask supported_cpu_advanced_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_advanced_feature_mask supported_cpu_advanced_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_advanced_feature_mask{};
 
         if (max_leaf >= 0x01) {

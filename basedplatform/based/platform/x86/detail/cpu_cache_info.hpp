@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // CPU Cache Info
 // https://en.wikipedia.org/wiki/CPUID#EAX=4_and_EAX=8000001Dh:_Cache_hierarchy_and_topology
@@ -77,7 +78,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_cache_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_cache_info_mask supported_cpu_cache_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_cache_info_mask supported_cpu_cache_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_cache_info_mask{};
 
         if (max_leaf >= 0x04) {

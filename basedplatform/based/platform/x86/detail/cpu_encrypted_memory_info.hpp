@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Encrypted Memory Capabilities Info
 // https://en.wikipedia.org/wiki/CPUID#EAX=8000001Fh:_Encrypted_Memory_Capabilities
@@ -49,7 +50,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_encrypted_memory_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_encrypted_memory_info_mask supported_cpu_encrypted_memory_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_encrypted_memory_info_mask supported_cpu_encrypted_memory_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_encrypted_memory_info_mask{};
 
         if (max_leaf >= 0x8000001F) {

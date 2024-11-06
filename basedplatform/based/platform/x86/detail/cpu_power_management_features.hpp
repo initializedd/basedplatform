@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Processor Power Management Information
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000007h:_Processor_Power_Management_Information_and_RAS_Capabilities
@@ -49,7 +50,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_power_management_feature_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_power_management_feature_mask supported_cpu_power_management_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_power_management_feature_mask supported_cpu_power_management_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_power_management_feature_mask{};
 
         if (max_leaf >= 0x80000007) {

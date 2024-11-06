@@ -4,13 +4,14 @@
 #include <string>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Processor Brand String
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000002h,80000003h,80000004h:_Processor_Brand_String
 
 namespace based::platform::x86::detail {
     [[nodiscard]]
-    std::string cpu_vendor(const std::uint32_t max_leaf) noexcept {
+    inline std::string cpu_vendor(const std::uint32_t max_leaf) noexcept {
         std::string result = "";
 
         if (max_leaf >= 0x80000004) {

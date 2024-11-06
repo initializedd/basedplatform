@@ -1,8 +1,8 @@
 #pragma once
 
+#include <bitset>
 #include <cstdint>
 #include <utility>
-#include <bitset>
 
 #include "cpu_id.hpp"
 

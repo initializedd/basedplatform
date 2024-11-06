@@ -5,6 +5,7 @@
 
 #include "cpu_id.hpp"
 #include "cpu_state_components.hpp"
+#include "../../util.hpp"
 
 // XSAVE features
 // https://en.wikipedia.org/wiki/CPUID#EAX=0Dh:_XSAVE_features_and_state-components
@@ -81,7 +82,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_distinct_max_xsave_save_area_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_distinct_max_xsave_save_area_mask supported_cpu_distinct_max_save_save_area(const std::uint32_t max_leaf) noexcept {
+    inline cpu_distinct_max_xsave_save_area_mask supported_cpu_distinct_max_save_save_area(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_distinct_max_xsave_save_area_mask{};
 
         if (max_leaf >= 0x0D) {
@@ -197,7 +198,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_simultaneous_max_xsave_save_area_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_simultaneous_max_xsave_save_area_mask supported_cpu_simultaneous_max_save_save_area(const std::uint32_t max_leaf) noexcept {
+    inline cpu_simultaneous_max_xsave_save_area_mask supported_cpu_simultaneous_max_save_save_area(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_simultaneous_max_xsave_save_area_mask{};
 
         if (max_leaf >= 0x0D) {
@@ -243,7 +244,7 @@ namespace based::platform::x86::detail {
     }
 
     [[nodiscard]]
-    cpu_state_component_mask supported_cpu_xcr0_state_components(const std::uint32_t max_leaf) noexcept {
+    inline cpu_state_component_mask supported_cpu_xcr0_state_components(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_state_component_mask{};
 
         if (max_leaf >= 0x0D) {

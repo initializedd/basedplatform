@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // TMUL Information
 // https://en.wikipedia.org/wiki/CPUID#EAX=1Eh,_ECX=0:_TMUL_Information
@@ -49,7 +50,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_tmul_matrix_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_tmul_matrix_info_mask supported_cpu_tmul_matrix_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_tmul_matrix_info_mask supported_cpu_tmul_matrix_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_tmul_matrix_info_mask{};
 
         if (max_leaf >= 0x1E) {
@@ -105,7 +106,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_tmul_number_info_mask : std::uint8_t
 
     [[nodiscard]]
-    cpu_tmul_number_info_mask supported_cpu_tmul_number_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_tmul_number_info_mask supported_cpu_tmul_number_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_tmul_number_info_mask{};
 
         if (max_leaf >= 0x1E) {

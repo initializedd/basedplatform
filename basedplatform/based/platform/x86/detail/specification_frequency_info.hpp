@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Processor and Bus specification frequencies
 // https://en.wikipedia.org/wiki/CPUID#EAX=15h_and_EAX=16h:_CPU,_TSC,_Bus_and_Core_Crystal_Clock_frequencies
@@ -49,7 +50,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_base_frequency_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_base_frequency_mask supported_cpu_base_frequency(const std::uint32_t max_leaf) noexcept {
+    inline cpu_base_frequency_mask supported_cpu_base_frequency(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_base_frequency_mask{};
 
         if (max_leaf >= 0x16) {
@@ -118,7 +119,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_max_frequency_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_max_frequency_mask supported_cpu_max_frequency(const std::uint32_t max_leaf) noexcept {
+    inline cpu_max_frequency_mask supported_cpu_max_frequency(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_base_frequency_mask{};
 
         if (max_leaf >= 0x16) {
@@ -187,7 +188,7 @@ namespace based::platform::x86::detail {
     }; // enum class bus_frequency_mask : std::uint32_t
 
     [[nodiscard]]
-    bus_frequency_mask supported_bus_frequency(const std::uint32_t max_leaf) noexcept {
+    inline bus_frequency_mask supported_bus_frequency(const std::uint32_t max_leaf) noexcept {
         auto result = bus_frequency_mask{};
 
         if (max_leaf >= 0x16) {

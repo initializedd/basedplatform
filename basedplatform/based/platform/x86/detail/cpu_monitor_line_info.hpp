@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Monitor-Line Info
 // https://en.wikipedia.org/wiki/CPUID#EAX=5:_MONITOR/MWAIT_Features
@@ -49,7 +50,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_smallest_monitor_line_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_smallest_monitor_line_info_mask supported_cpu_smallest_monitor_line_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_smallest_monitor_line_info_mask supported_cpu_smallest_monitor_line_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_smallest_monitor_line_info_mask{};
 
         if (max_leaf >= 0x05) {
@@ -118,7 +119,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_smallest_monitor_line_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_largest_monitor_line_info_mask supported_cpu_largest_monitor_line_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_largest_monitor_line_info_mask supported_cpu_largest_monitor_line_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_largest_monitor_line_info_mask{};
 
         if (max_leaf >= 0x05) {

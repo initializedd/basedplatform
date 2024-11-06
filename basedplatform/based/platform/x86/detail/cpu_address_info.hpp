@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Virtual and Physical Address Info
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000008h:_Virtual_and_Physical_address_Sizes
@@ -65,7 +66,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_address_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_address_info_mask supported_cpu_address_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_address_info_mask supported_cpu_address_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_address_info_mask{};
 
         if (max_leaf >= 0x80000008) {

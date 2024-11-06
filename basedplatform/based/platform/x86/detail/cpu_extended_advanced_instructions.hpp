@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Extended advanced instructions
 // https://en.wikipedia.org/wiki/CPUID#EAX=7,_ECX=1:_Extended_Features
@@ -48,7 +49,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_extended_advanced_instruction_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_extended_advanced_instruction_mask supported_extended_advanced_instructions(const std::uint32_t max_leaf) noexcept {
+    inline cpu_extended_advanced_instruction_mask supported_extended_advanced_instructions(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_extended_advanced_instruction_mask{};
 
         if (max_leaf >= 0x07) {

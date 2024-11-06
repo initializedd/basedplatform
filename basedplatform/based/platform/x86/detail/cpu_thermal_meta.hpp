@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // CPU Thermal Meta
 // https://en.wikipedia.org/wiki/CPUID#EAX=6:_Thermal_and_power_management
@@ -41,7 +42,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_thermal_meta_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_thermal_meta_mask supported_cpu_thermal_meta(const std::uint32_t max_leaf) noexcept {
+    inline cpu_thermal_meta_mask supported_cpu_thermal_meta(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_thermal_meta_mask{};
 
         if (max_leaf >= 0x06) {

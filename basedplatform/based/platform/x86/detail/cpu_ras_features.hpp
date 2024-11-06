@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // RAS Capabilities
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000007h:_Processor_Power_Management_Information_and_RAS_Capabilities
@@ -25,7 +26,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_ras_feature_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_ras_feature_mask supported_cpu_ras_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_ras_feature_mask supported_cpu_ras_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_ras_feature_mask{};
 
         if (max_leaf >= 0x80000007) {

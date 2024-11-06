@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // Intel Key Locker features
 // https://en.wikipedia.org/wiki/CPUID#EAX=19h:_Intel_Key_Locker_features
@@ -25,7 +26,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_key_locker_restriction_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_key_locker_restriction_mask supported_cpu_key_locker_restrictions(const std::uint32_t max_leaf) noexcept {
+    inline cpu_key_locker_restriction_mask supported_cpu_key_locker_restrictions(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_key_locker_restriction_mask{};
 
         if (max_leaf >= 0x19) {
@@ -58,7 +59,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_key_locker_security_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_key_locker_security_mask supported_cpu_key_locker_security(const std::uint32_t max_leaf) noexcept {
+    inline cpu_key_locker_security_mask supported_cpu_key_locker_security(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_key_locker_security_mask{};
 
         if (max_leaf >= 0x19) {
@@ -86,7 +87,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_key_locker_meta_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_key_locker_meta_mask supported_cpu_key_locker_meta(const std::uint32_t max_leaf) noexcept {
+    inline cpu_key_locker_meta_mask supported_cpu_key_locker_meta(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_key_locker_meta_mask{};
 
         if (max_leaf >= 0x19) {

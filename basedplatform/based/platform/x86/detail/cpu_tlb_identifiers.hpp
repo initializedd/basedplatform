@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // TLB Identifiers
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000005h:_L1_Cache_and_TLB_Identifiers
@@ -80,7 +81,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_tlb_identifier_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_tlb_identifier_mask supported_cpu_huge_page_tlb_identifiers(const std::uint32_t max_leaf) noexcept {
+    inline cpu_tlb_identifier_mask supported_cpu_huge_page_tlb_identifiers(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_tlb_identifier_mask{};
 
         if (max_leaf >= 0x80000005) {
@@ -126,7 +127,7 @@ namespace based::platform::x86::detail {
     }
 
     [[nodiscard]]
-    cpu_tlb_identifier_mask supported_cpu_small_page_tlb_identifiers(const std::uint32_t max_leaf) noexcept {
+    inline cpu_tlb_identifier_mask supported_cpu_small_page_tlb_identifiers(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_tlb_identifier_mask{};
 
         if (max_leaf >= 0x80000005) {

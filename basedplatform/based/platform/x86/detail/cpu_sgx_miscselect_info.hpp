@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // SGX MISCSELECT
 // https://en.wikipedia.org/wiki/CPUID#EAX=12h:_SGX_capabilities
@@ -21,7 +22,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_sgx_miscselect_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_sgx_miscselect_info_mask supported_cpu_sgx_miscselect_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_sgx_miscselect_info_mask supported_cpu_sgx_miscselect_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_sgx_miscselect_info_mask{};
 
         if (max_leaf >= 0x12) {

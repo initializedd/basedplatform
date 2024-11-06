@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // CPU Extended Compat Features
 // https://en.wikipedia.org/wiki/CPUID#EAX=7,_ECX=1:_Extended_Features
@@ -25,7 +26,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_extended_compat_feature_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_extended_compat_feature_mask supported_extended_compat_features(const std::uint32_t max_leaf) noexcept {
+    inline cpu_extended_compat_feature_mask supported_extended_compat_features(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_extended_compat_feature_mask{};
 
         if (max_leaf >= 0x07) {

@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // XSAVE features and state-components
 // https://en.wikipedia.org/wiki/CPUID#EAX=0Dh:_XSAVE_features_and_state-components
@@ -80,7 +81,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_state_component_size_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_state_component_size_mask supported_cpu_state_component_size(const std::uint32_t max_leaf) noexcept {
+    inline cpu_state_component_size_mask supported_cpu_state_component_size(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_state_component_size_mask{};
 
         if (max_leaf >= 0x0D) {
@@ -196,7 +197,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_state_component_offset_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_state_component_offset_mask supported_cpu_state_component_offset(const std::uint32_t max_leaf) noexcept {
+    inline cpu_state_component_offset_mask supported_cpu_state_component_offset(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_state_component_offset_mask{};
 
         if (max_leaf >= 0x0D) {
@@ -253,7 +254,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_state_component_meta_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_state_component_meta_mask supported_cpu_state_component_meta(const std::uint32_t max_leaf) noexcept {
+    inline cpu_state_component_meta_mask supported_cpu_state_component_meta(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_state_component_meta_mask{};
 
         if (max_leaf >= 0x0D) {

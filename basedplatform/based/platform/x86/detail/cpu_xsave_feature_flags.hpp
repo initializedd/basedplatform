@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // XSAVE feature flags in EAX
 // https://en.wikipedia.org/wiki/CPUID#EAX=0Dh:_XSAVE_features_and_state-components
@@ -27,7 +28,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_xsave_feature_flag_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_xsave_feature_flag_mask supported_cpu_xsave_feature_flags(const std::uint32_t max_leaf) noexcept {
+    inline cpu_xsave_feature_flag_mask supported_cpu_xsave_feature_flags(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_xsave_feature_flag_mask{};
 
         if (max_leaf >= 0x0D) {

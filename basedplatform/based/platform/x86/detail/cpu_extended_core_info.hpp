@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "cpu_id.hpp"
+#include "../../util.hpp"
 
 // CPU Extended Core Info
 // https://en.wikipedia.org/wiki/CPUID#EAX=80000001h:_Extended_Processor_Info_and_Feature_Bits
@@ -77,7 +78,7 @@ namespace based::platform::x86::detail {
     }; // enum class cpu_extended_core_info_mask : std::uint32_t
 
     [[nodiscard]]
-    cpu_extended_core_info_mask supported_extended_core_info(const std::uint32_t max_leaf) noexcept {
+    inline cpu_extended_core_info_mask supported_extended_core_info(const std::uint32_t max_leaf) noexcept {
         auto result = cpu_extended_core_info_mask{};
 
         if (max_leaf >= 0x80000001) {
